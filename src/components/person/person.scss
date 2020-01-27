@@ -1,0 +1,65 @@
+/**
+* person
+*/
+
+.person {
+  $this: &;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 210px;
+  text-align: center;
+
+  &.is-light {
+    #{$this}__name {
+      color: $white;
+    }
+
+    #{$this}__position {
+      color: $accent;
+    }
+  }
+
+  &.is-simple {
+    display: block;
+    width: auto;
+    text-align: left;
+  }
+
+  &__cover {
+    width: 100%;
+    height: 210px;
+    margin: 0;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__header {
+    margin-top: 30px;
+  }
+
+  &__name {
+    color: $black;
+    font-weight: $semibold;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  &__position {
+    margin: 0;
+    margin-top: 7px;
+    color: $darkgrey;
+    font-weight: $regular;
+    font-size: 14px;
+    line-height: 1;
+  }
+}

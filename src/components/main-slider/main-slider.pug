@@ -1,0 +1,32 @@
+//- main-slider
+
+include /components/slide/slide
+include /components/arrow/arrow
+
+mixin main-slider({ items })
+  main-slider( inline-template )
+    .main-slider(
+      :class='{ "is-ready": ready }'
+    )
+      .main-slider__inner(
+        ref='swiper'
+      )
+        ul.main-slider__list(
+          ref='list'
+        )
+          each item, index in items
+            li.main-slider__item(
+              ref='item'
+            )
+              +slide(item)
+        .main-slider__controls
+          .main-slider__container.container
+            .main-slider__arrows
+              button.main-slider__arrow(
+                ref='prev'
+              )
+                +arrow({ classList: 'is-left' })
+              button.main-slider__arrow(
+                ref='next'
+              )
+                +arrow({})

@@ -1,0 +1,31 @@
+.input {
+  $this: &;
+
+  display: block;
+  width: 100%;
+  padding: 14px;
+  color: $black;
+  background-color: $white;
+  border: 1px solid $linegrey;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: $regular;
+  font-family: $font-family;
+  line-height: 1;
+  outline: none !important;
+  transition: ease border-color 300ms;
+
+  @include variable-font;
+
+  &:focus {
+    border-color: $accent;
+  }
+
+  &::-moz-placeholder {
+    color: $softgrey;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $softgrey;
+  }
+}

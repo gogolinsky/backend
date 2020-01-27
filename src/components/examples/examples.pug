@@ -1,0 +1,10 @@
+//- examples
+
+include /components/example/example
+
+mixin examples({ items })
+  .examples
+    ul.examples__list
+      each item in items
+        li.examples__item
+          +example(item)

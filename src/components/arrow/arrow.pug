@@ -1,0 +1,13 @@
+//- arrow
+
+mixin arrow({ classList })
+  span.arrow(
+    class=classList
+  )
+    svg.arrow__icon(
+      tabindex='-1'
+    )
+      use(
+        tabindex='-1'
+        xlink:href='/img/sprite.svg#arrow'
+      )

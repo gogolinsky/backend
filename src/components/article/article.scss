@@ -1,0 +1,17 @@
+/**
+* article
+*/
+
+.article {
+  $this: &;
+
+  &__header {
+  }
+
+  &__title {
+  }
+
+  &__body {
+    margin-top: 40px;
+  }
+}

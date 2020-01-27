@@ -1,0 +1,64 @@
+/**
+* pricelist
+*/
+
+.pricelist {
+  $this: &;
+
+  &__header {
+  }
+
+  &__label {
+    margin: 0;
+    color: $softgrey;
+    font-size: 16px;
+    line-height: 1;
+
+    &.is-last {
+      padding-left: 40px;
+    }
+  }
+
+  &__body {
+    margin-top: 20px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 24px 0;
+
+    & + & {
+      border-top: 1px solid $linegrey;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $black;
+    font-weight: $semibold;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &__caption {
+    margin: 0;
+    margin-top: 5px;
+    color: $accent;
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  &__cost {
+    margin: 0;
+    padding-left: 40px;
+    color: $accent;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+  }
+}

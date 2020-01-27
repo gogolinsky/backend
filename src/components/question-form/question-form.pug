@@ -1,0 +1,58 @@
+//- question-form
+
+include /components/v-input/v-input
+include /components/v-textarea/v-textarea
+include /components/checkbox/checkbox
+include /components/button/button
+
+mixin question-form()
+  question-form(
+    inline-template
+  )
+    validation-observer(
+      ref="observer"
+    )
+      form.question-form.form(
+        action='/thanks.html'
+        @submit='onsubmit'
+      )
+        header.form__header
+          h3.form__title.title Или задайте свой вопрос
+
+        .form__body
+          .grid.is-columns
+            .col-6
+              .form__control
+                .form__field
+                  +v-input({
+                    name: 'name',
+                    placeholder: 'Ваше имя'
+                  })
+            .col-6
+              .form__control
+                .form__field
+                  +v-input({
+                    name: 'name',
+                    mask: '"+7 (###) ### ## ##"',
+                    rules: 'required|phone',
+                    placeholder: 'Номер телефона'
+                  })
+            .col-12
+              .form__control
+                .form__field
+                  +v-textarea({
+                    name: 'comment',
+                    rules: 'required',
+                    placeholder: 'Ваш вопрос'
+                  })
+
+        footer.question-form__footer.form__footer
+          .form__agreement
+            +checkbox({
+              name: 'agreement',
+              label: 'Заказывая обратный звонок, даю согласие на обработку <a href="/policy.html">персональных данных</a>'
+            })( required )
+          .question-form__button.form__button
+            +button({
+              label: 'Отправить вопрос'
+            }).is-wide.is-large

@@ -1,0 +1,48 @@
+/**
+* rating
+*/
+
+.rating {
+  $this: &;
+
+  display: flex;
+  align-items: center;
+
+  &__label {
+    margin-right: 12px;
+    position: relative;
+    top: -2px;
+    color: $dark;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    color: $dark;
+    opacity: 0.5;
+    line-height: 1;
+
+    &.is-filled {
+      color: $accent;
+      opacity: 1;
+    }
+
+    & + & {
+      margin-left: 8px;
+    }
+  }
+
+  &__icon {
+    width: 17px;
+    height: 15px;
+    color: currentColor;
+  }
+}

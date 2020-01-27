@@ -1,0 +1,24 @@
+/**
+* title
+*/
+
+.title {
+  $this: &;
+
+  display: flex;
+  flex-direction: column;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 21px;
+    height: 13px;
+    flex-shrink: 0;
+    margin-bottom: 15px;
+    background-image: url(/img/dots.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+  }
+
+}

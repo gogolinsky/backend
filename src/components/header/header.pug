@@ -1,0 +1,24 @@
+//- header
+
+include /components/logo/logo
+include /components/header-nav/header-nav
+include /components/phone/phone
+include /components/button/button
+
+mixin header({ nav })
+
+  - islight = page.header.light ? 'is-light' : ''
+
+  .header(
+    class=page.header.class
+  )
+    .container
+      .header__inner
+        .header__logo
+          +logo
+        .header__nav
+          +header-nav(nav)
+        .header__phone
+          +phone({ value: '+7 (952) 687-58-04', classList: islight })
+        .header__button
+          +button({ label: 'Заказать звонок', classList: islight })(data-modal='callback' class=`is-bordered ${islight}`)

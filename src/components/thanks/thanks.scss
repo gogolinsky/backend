@@ -1,0 +1,95 @@
+/**
+* thanks
+*/
+
+.thanks {
+  $this: &;
+
+  padding: 54px 0 110px;
+  position: relative;
+
+  &.is-compact {
+    padding: 70px 30px 45px;
+
+    &::before {
+      display: none;
+    }
+
+    #{$this}__header {
+      &::before {
+        width: 154px;
+        height: 154px;
+      }
+    }
+
+    #{$this}__caption {
+      margin-top: 40px;
+    }
+
+    #{$this}__footer {
+      margin-top: 30px;
+      padding-top: 40px;
+      border-top: 1px solid $linegrey;
+    }
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 1066px;
+    height: 236px;
+    position: absolute;
+    left: calc(50% - 533px);
+    top: 110px;
+    background-image: url(/img/pattern.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 288px;
+      height: 288px;
+      background-image: url(/img/success.svg);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+  }
+
+  &__title {
+    margin-top: 25px;
+    color: $black;
+    font-weight: $semibold;
+    font-size: 36px;
+    line-height: 1.39;
+  }
+
+  &__caption {
+    margin: 0;
+    margin-top: 17px;
+    color: $darkgrey;
+    font-size: 18px;
+    line-height: 1.67;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  &__button {
+    width: 100%;
+    max-width: 354px;
+  }
+}

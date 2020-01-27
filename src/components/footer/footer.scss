@@ -1,0 +1,48 @@
+/**
+* footer
+*/
+
+.footer {
+  $this: &;
+
+  padding: 70px 0 40px;
+  background-color: $black;
+  color: $white;
+
+  &__top {
+  }
+
+  &__logo {
+  }
+
+  &__links {
+  }
+
+  &__bottom {
+    margin-top: 60px;
+  }
+
+  &__copy {
+    margin: 0;
+    color: $softgrey;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  &__policy {
+    color: $linegrey;
+    font-size: 14px;
+    line-height: 1;
+    text-decoration: none;
+    transition: ease color 300ms;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  &__dc {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

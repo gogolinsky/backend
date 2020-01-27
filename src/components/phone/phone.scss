@@ -1,0 +1,54 @@
+/**
+* phone
+*/
+
+.phone {
+  $this: &;
+
+  &.is-centred {
+    text-align: center;
+  }
+
+  &.is-big {
+    #{$this}__value {
+      font-size: 32px;
+    }
+  }
+
+  &.is-light {
+    #{$this}__value {
+      color: $white;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+
+  &__caption {
+    margin: 0;
+    color: $accent;
+    font-weight: $semibold;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  &__value {
+    display: inline-block;
+    color: $black;
+    font-weight: $medium;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    transition: ease color 300ms;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  &__caption + &__value {
+    margin-top: 20px;
+  }
+}

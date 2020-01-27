@@ -1,0 +1,37 @@
+//- contacts
+
+include /components/person/person
+include /components/contact/contact
+
+mixin contacts(options = {})
+  .contacts
+    .grid.is-row(
+      class=options.align || ''
+    )
+      .col-6
+        .contacts__person
+          +person({
+            image: '/img/person.jpg',
+            name: 'Дмитрий Соляник',
+            position: 'Главный техник'
+          })
+      .col-6
+        ul.contacts__list
+          li.contacts__item
+            +contact({
+              caption: 'Телефон',
+              type: 'tel',
+              value: '+7 (910) 788-40-41'
+            })
+          li.contacts__item
+            +contact({
+              caption: 'Адрес',
+              type: 'address',
+              value: 'Смоленск, дер. Тепличный Комбинат №1'
+            })
+          li.contacts__item
+            +contact({
+              caption: 'Email',
+              type: 'email',
+              value: 'andrey@prometey67.ru'
+            })

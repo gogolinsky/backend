@@ -1,0 +1,15 @@
+//- rating
+
+mixin rating({ title, value, max = 5 })
+  .rating
+
+    if title
+      .rating__label=title
+
+    ul.rating__list
+      each item, index in Array(max)
+        li.rating__item(
+          class=index < value ? 'is-filled' : ''
+        )
+          svg.rating__icon
+            use(xlink:href='/img/sprite.svg#logo')

@@ -1,0 +1,49 @@
+//- company-history
+
+include /components/arrow/arrow
+include /components/history-item/history-item
+
+mixin company-history({ items })
+  company-history(inline-template)
+    .company-history(
+      :class='{ "is-ready": ready }'
+    )
+      .company-history__inner
+        .company-history__body
+          .company-history__slider(
+            ref='slider'
+          )
+            ul.company-history__list(
+              ref='sliderList'
+            )
+              each item, index in items
+                li.company-history__item(
+                  ref='sliderItem'
+                )
+                  +history-item(item)
+        .company-history__controls
+          button.company-history__arrow(
+            ref='prev'
+          )
+            +arrow({ classList: 'is-up' })
+          .company-history__roll(
+            ref='roll'
+          )
+            ul.company-history__thumbs(
+              ref='rollList'
+            )
+              each item, index in items
+                li.company-history__thumb(
+                  ref='rollItem'
+                  data-year=item.year
+                  @click='clickHandler'
+                )
+                  .company-history__cover
+                    img.company-history__image(
+                      src=item.img
+                      alt
+                    )
+          button.company-history__arrow(
+            ref='next'
+          )
+            +arrow({ classList: 'is-down' })

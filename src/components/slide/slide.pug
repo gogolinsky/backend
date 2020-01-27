@@ -1,0 +1,33 @@
+//- slide
+
+include /components/button/button
+
+mixin slide({ cover, image, title, caption, button })
+  article.slide
+    .slide__background(
+      style=`background-image: url(${cover});`
+      data-swiper-parallax-x="-30"
+    )
+    .slide__container.container
+      .slide__grid.grid.is-row
+        .col-6
+          .slide__body
+            header.slide__header
+              h2.slide__title.title(
+                data-swiper-parallax-x="-40"
+              )!=title
+              p.slide__caption(
+                data-swiper-parallax-x="-70"
+              )!=caption
+            .slide__button(
+              data-swiper-parallax-x="-100"
+            )
+              +button(button)(data-modal='callback-with-attach').is-big
+        .col-6
+          figure.slide__cover(
+            data-swiper-parallax-x="-100"
+          )
+            img.slide__image(
+              src=image
+              alt
+            )

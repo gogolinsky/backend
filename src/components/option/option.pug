@@ -1,0 +1,14 @@
+//- option
+
+mixin option({ icon, title, list })
+  article.option
+    header.option__header
+      img.option__icon(
+        src=icon
+        alt
+      )
+      h3.option__title=title
+    .option__body
+      ul.option__list
+        each item in list
+          li.option__item=item

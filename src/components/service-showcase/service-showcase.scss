@@ -1,0 +1,62 @@
+/**
+* service-showcase
+*/
+
+.service-showcase {
+  $this: &;
+
+  &__header {
+  }
+
+  &__title {
+    margin: 0;
+    color: $black;
+    font-weight: $semibold;
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  &__descr {
+    margin: 0;
+    margin-top: 25px;
+    color: $darkgrey;
+    font-size: 16px;
+    line-height: 1.87;
+  }
+
+  &__warn {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-top: 35px;
+    padding: 20px 0;
+    color: $darkgrey;
+    border-top: 1px solid $linegrey;
+    border-bottom: 1px solid $linegrey;
+    font-weight: $medium;
+    font-size: 16px;
+    line-height: 1.87;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 36px;
+      margin-right: 10px;
+      background-image: url(/img/warn.svg);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+  }
+
+  &__link {
+    margin-top: 50px;
+  }
+
+  &__body {
+  }
+
+  &__examples {
+  }
+}

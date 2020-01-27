@@ -1,0 +1,77 @@
+/**
+* opinion
+*/
+
+.opinion {
+  $this: &;
+
+  display: flex;
+
+  &__cover {
+    width: 210px;
+    height: 210px;
+    margin: 0;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__body {
+    margin-left: 45px;
+    padding-top: 15px;
+  }
+
+  &__text {
+    margin: 0;
+    position: relative;
+    z-index: 0;
+    color: $darkgrey;
+    font-style: italic;
+    font-family: $font-family;
+    font-weight: $regular;
+    font-size: 16px;
+    line-height: 1.87;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 14px;
+      position: absolute;
+      top: -15px;
+      left: -5px;
+      z-index: -1;
+      background-image: url(/img/quote.svg);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+  }
+
+  &__header {
+    margin-top: 30px;
+  }
+
+  &__name {
+    color: $black;
+    font-weight: $semibold;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  &__position {
+    margin: 0;
+    margin-top: 5px;
+    color: $darkgrey;
+    font-weight: $regular;
+    font-size: 14px;
+    line-height: 1;
+  }
+}

@@ -1,0 +1,21 @@
+/**
+* comments-form
+*/
+
+.comments-form {
+  $this: &;
+
+  &__header {
+  }
+
+  &__body {
+  }
+
+  &__footer {
+    display: flex;
+  }
+
+  &__button {
+    max-width: 324px;
+  }
+}

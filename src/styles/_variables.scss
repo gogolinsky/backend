@@ -1,0 +1,75 @@
+$accent: #ff5f1a;
+$second: #3d54a2;
+$black: #232428;
+$dark: #333333;
+$darkgrey: #4b535b;
+$grey: #666;
+$softgrey: #9099a3;
+$midgrey: #f0f0f0;
+$lightgrey: #f2f6f8;
+$linegrey: #dde4eb;
+$white: #ffffff;
+$cyan: #0862ce;
+$red: #e31716;
+$green: #05d389;
+
+$isResponsive: false;
+$hasGuides: false;
+
+$font-size: 18px;
+$font-sizes: (
+  1: 36px,
+  2: 34px,
+  3: 26px,
+  4: 18px,
+  5: 20px,
+  6: 20px
+);
+
+$font-family: 'Inter', sans-serif;
+$font-family-var: 'Inter var', sans-serif;
+$line-height: 1.71;
+
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$heavy: 800;
+
+$lg: 1599px;
+$xl: 1439px;
+$l: 1179px;
+$md: 959px;
+$m: 767px;
+$s: 559px;
+$xs: 320px;
+
+$breakpoints: (
+  'lg': $lg,
+  'xl': $xl,
+  'l': $l,
+  'md': $md,
+  'm': $m,
+  's': $s,
+  'xs': $xs
+);
+
+$gap: 25px;
+$width: 100%;
+$minwidth: 1170px;
+$maxwidth: 1170px;
+
+$layer-1: 100;
+$layer-2: 200;
+$layer-3: 300;
+$layer-4: 400;
+$layer-5: 500;
+$layer-6: 600;
+$layer-7: 700;
+$layer-8: 800;
+$layer-9: 900;
+$layer-9: 900;
+$layer-10: 1000;
+
+$ease: cubic-bezier(0.455, 0.03, 0.515, 0.955);

@@ -1,0 +1,55 @@
+//- comments-form
+
+include /components/textarea/textarea
+include /components/input/input
+include /components/checkbox/checkbox
+include /components/button/button
+
+mixin comments-form(options = {})
+  form.comments-form.form
+    .comments-form__header.form__header
+      h3.comments-form__title.form__title Оставить комментарий
+    .comments-form__body.form__body
+      .grid.is-columns
+        .col-12
+          label.comments-form__control.form__control
+            span.comments-form__field.form__field
+              +textarea()(
+                name='comment'
+                placeholder='Ваш комментарий *'
+                required
+              )
+        .col-6.col-m-12
+          label.comments-form__control.form__control
+            span.comments-form__field.form__field
+              +input()(
+                name='name'
+                type='text'
+                placeholder='Ваше имя *'
+                required
+              )
+        .col-6.col-m-12
+          label.comments-form__control.form__control
+            span.comments-form__field.form__field
+              +input()(
+                name='email'
+                type='email'
+                placeholder='Ваше email *'
+                required
+              )
+
+    .comments-form__footer.form__footer
+      .comments-form__agreement.form__agreement
+        span.comments-form__field.form__field
+          +checkbox({
+            label:'Публикуя комментарий, даю согласие на&nbsp;обработку <a href="#" class="link">персональных данных</a>'
+          })(
+            name='policy'
+            required
+            class='is-agreement'
+          )
+
+      .comments-form__button.form__button
+        +button({
+          label: 'Опубликовать комментарий'
+        }).is-wide.is-bordered

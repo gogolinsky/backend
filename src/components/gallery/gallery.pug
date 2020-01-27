@@ -1,0 +1,15 @@
+//- gallery
+
+include /components/gallery-item/gallery-item
+include /components/pagination/pagination
+
+mixin gallery({ items, pagination })
+  .gallery.js-gallery
+    .gallery__body
+      ul.gallery__list.grid.is-columns
+        each item in items
+          li.gallery__item.col-4.js-gallery-item
+            +gallery-item(item)
+    .gallery__footer
+      .gallery__pagination
+        +pagination(pagination)

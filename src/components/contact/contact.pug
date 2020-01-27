@@ -1,0 +1,16 @@
+//- contact
+
+mixin contact({ caption, type, value })
+  .contact
+    .contact__caption=caption
+    case type
+      when 'tel'
+        a.contact__value(
+          href='tel:' + value
+        )=value
+      when 'email'
+        a.contact__value(
+          href='mailto:' + value
+        )=value
+      default
+        .contact__value=value

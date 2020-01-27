@@ -1,0 +1,14 @@
+//- intro
+
+include /components/opinion/opinion
+
+mixin intro(options = {})
+  .intro
+    .grid.is-row
+      .col-3
+        .intro__label <i>Теx</i>Арсенал
+      .col-9
+        .intro__body
+          p.intro__text Производим методом холодной штамповки более 2000 видов стандартных деталей, разрабатываем уникальные формы на заказ для серийной штамповки.
+          .intro__opinion
+            +opinion

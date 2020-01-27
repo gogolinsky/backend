@@ -1,0 +1,11 @@
+//- checkbox
+
+mixin checkbox({ label, name, className = '' })
+  label.checkbox(
+    class=className
+  )
+    input.checkbox__input(
+      type='checkbox'
+      name=name
+    )&attributes(attributes)
+    span.checkbox__label!=label

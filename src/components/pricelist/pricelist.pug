@@ -1,0 +1,40 @@
+//- pricelist
+
+mixin pricelist(options = {})
+  .pricelist
+    .pricelist__header
+      .grid.is-row
+        .col-70p
+          p.pricelist__label Объем заказа
+        .col-30p
+          p.pricelist__label.is-last Цена
+    .pricelist__body
+      ul.pricelist__list
+        li.pricelist__item
+          .grid.is-row.is-middle
+            .col-70p
+              h5.pricelist__title Листы свыше 50 000 м², 5 мм толщина
+              p.pricelist__caption 76-90 рабочих дней
+            .col-30p
+              p.pricelist__cost 950 000 ₽
+        li.pricelist__item
+          .grid.is-row.is-middle
+            .col-70p
+              h5.pricelist__title Листы 20 000 - 50 000 м², 5 мм толщина
+              p.pricelist__caption 76-90 рабочих дней
+            .col-30p
+              p.pricelist__cost 650 000 ₽
+        li.pricelist__item
+          .grid.is-row.is-middle
+            .col-70p
+              h5.pricelist__title Листы 10 000 - 20 000 м², 5 мм толщина
+              p.pricelist__caption 76-90 рабочих дней
+            .col-30p
+              p.pricelist__cost 450 000 ₽
+        li.pricelist__item
+          .grid.is-row.is-middle
+            .col-70p
+              h5.pricelist__title Листы до 10 000 м², 5 мм толщина
+              p.pricelist__caption 76-90 рабочих дней
+            .col-30p
+              p.pricelist__cost 450 000 ₽

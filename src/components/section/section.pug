@@ -1,0 +1,14 @@
+//- section
+
+mixin section({ title, classList = '' })
+  section.section(
+    class=classList
+  )
+    .container
+      if title
+        header.section__header
+          if title
+            h2.section__title.title!=title
+      if block
+        .section__body
+          block

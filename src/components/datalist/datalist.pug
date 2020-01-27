@@ -1,0 +1,8 @@
+//- datalist
+
+mixin datalist({ items })
+  dl.datalist
+    each item in items
+      .datalist__row
+        dt.datalist__key=item.key
+        dd.datalist__value=item.value

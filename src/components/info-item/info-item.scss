@@ -1,0 +1,23 @@
+/**
+* info-item
+*/
+
+.info-item {
+  $this: &;
+
+  &__title {
+    color: $accent;
+    font-weight: $medium;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  &__text {
+    margin: 0;
+    margin-top: 10px;
+    color: $darkgrey;
+    font-weight: $medium;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}

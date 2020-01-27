@@ -1,0 +1,27 @@
+//- v-input
+
+mixin v-input({ name, placeholder, mask, rules })
+  v-input(
+    inline-template
+    :field-name=`"${name}"`
+    :visible-errors='[]'
+  )
+
+    validation-provider.v-input(
+      rules=rules
+      :class='{ "is-active": active, "is-ready": ready }'
+      ref="provider"
+    )
+      label.v-input__label
+        span.v-input__placeholder=placeholder
+        input.v-input__field(
+          name=name
+          v-model='value'
+          v-mask=mask
+          @focus='handler("focus")'
+          @blur='handler("blur")'
+        )
+        span.v-input__errors(
+          v-if='$refs.provider && $refs.provider.messages.length > 0'
+        )
+          span.v-input__error(v-for='error in $refs.provider.messages') {{ error }}

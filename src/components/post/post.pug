@@ -1,0 +1,19 @@
+//- post
+
+mixin post({ cover, date, title, descr })
+  article.post
+    figure.post__cover
+      img.post__image(
+        src=cover
+        alt=title
+      )
+    .post__body
+      header.post__header
+        .post__meta
+          time.post__date=date
+        h3.post__title
+          a.post__link(
+            href="/post.html"
+            title=title
+          )=title
+      p.post__descr=descr

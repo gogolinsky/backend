@@ -1,0 +1,45 @@
+//- page-modal
+
+include /components/callback-form/callback-form
+include /components/thanks/thanks
+
+mixin modal-thanks()
+  #modal-thanks
+    +thanks({ compact: true })
+
+mixin modal-callback()
+  #modal-callback
+    +callback-form
+
+mixin modal-callback-with-attach()
+  #modal-callback-with-attach
+    +callback-form({
+      title: 'Заказать по чертежу',
+      action: 'Отправить',
+      hasAttach: true
+    })
+
+mixin page-modal()
+  page-modal( inline-template )
+    .page-modal
+      .page-modal__list
+        +modal-thanks
+        +modal-callback
+        +modal-callback-with-attach
+      .page-modal__template(
+        ref='template'
+      )
+        .page-modal__inner(
+          ref='inner'
+          @transitionend.stop=''
+        )
+          button.page-modal__close(
+            @click='close'
+            title='Закрыть'
+          )
+          .page-modal__content(
+            ref='content'
+          )
+
+
+

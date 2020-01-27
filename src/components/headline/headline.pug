@@ -1,0 +1,34 @@
+//- headline
+
+include /components/breadcrumb/breadcrumb
+include /components/list/list
+
+mixin headline({ cover, className = '', breadcrumb, title, subtitle, list, descr })
+  header.headline(
+    class=cover && 'has-cover'
+    class=className
+  )
+    if cover
+      .headline__cover(
+        style=`background-image: url(${cover})`
+      )
+    .container
+      .grid.is-row
+        div(
+          class=cover ? 'col-8' : 'col-7'
+        )
+          .headline__body
+            .headline__breadcrumb
+              +breadcrumb(breadcrumb)
+
+            h1.headline__title.title=title
+
+            if subtitle
+              p.headline__subtitle=subtitle
+
+            if list
+              .headline__list
+                +list(list)
+
+            if descr
+              .headline__descr.text!=descr

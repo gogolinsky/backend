@@ -1,0 +1,129 @@
+/**
+* table
+*/
+
+.table {
+  $this: &;
+
+  overflow: auto;
+
+  &__header {
+  }
+
+  &__title {
+    margin: 0;
+    color: $black;
+    font-weight: $semibold;
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  &__body {
+    margin-top: 30px;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: $white;
+    color: $dark;
+    font-weight: $medium;
+    font-size: 15px;
+    line-height: 1.47;
+
+    #{$this}__thead {
+      background-color: $dark;
+      color: $white;
+      font-size: 14px;
+      line-height: 1;
+
+      #{$this}__col {
+        padding: 20px;
+        position: relative;
+        white-space: nowrap;
+      }
+
+      #{$this}__col + #{$this}__col::before {
+        content: '';
+        width: 1px;
+        height: calc(100% - 20px);
+        position: absolute;
+        top: 10px;
+        left: 0;
+        background-color: $grey;
+      }
+    }
+
+    #{$this}__tbody {
+      border: 1px solid $linegrey;
+      border-top: none;
+
+      #{$this}__row:nth-child(even) {
+        background-color: #f3f5f9;
+      }
+
+      #{$this}__col {
+        padding: 12px;
+      }
+
+      #{$this}__col + #{$this}__col {
+        border-left: 1px solid $linegrey;
+      }
+    }
+
+    .increase {
+      color: $green;
+    }
+
+    .decrease {
+      color: $second;
+    }
+  }
+
+  @media (max-width: $m) {
+    overflow: visible;
+
+    &__title {
+      font-size: 26px;
+    }
+
+    &__body {
+      display: flex;
+      margin-top: 20px;
+      font-size: 13px;
+
+      #{$this}__thead {
+        display: none;
+      }
+
+      #{$this}__tbody {
+        border-top: 1px solid $linegrey;
+
+        #{$this}__row {
+          display: block;
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        #{$this}__col {
+          display: flex;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          border-left: none !important;
+
+          &::before {
+            content: attr(data-title);
+            width: 88px;
+            padding-right: 16px;
+            color: $accent;
+            flex-shrink: 0;
+            font-weight: $semibold;
+            font-size: 12px;
+            text-align: right;
+          }
+        }
+
+        #{$this}__col + #{$this}__col {
+          border-top: 1px solid $linegrey;
+        }
+      }
+    }
+  }
+}

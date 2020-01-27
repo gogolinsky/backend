@@ -1,0 +1,9 @@
+@mixin is-disabled {
+  $this: &;
+
+  &[disabled] {
+    opacity: 0.5 !important;
+    pointer-events: none;
+    user-select: none;
+  }
+}

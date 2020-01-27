@@ -1,0 +1,12 @@
+//- radio
+
+mixin radio({ className, name, value, label })
+  label.radio(
+    class=className || ''
+  )
+    input.radio__input(
+      type='radio'
+      name=name || ''
+      value=value || ''
+    )&attributes(attributes)
+    span.radio__label!=label

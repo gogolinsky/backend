@@ -1,0 +1,30 @@
+//- gallery-slider
+
+mixin gallery-slider(options = {})
+  .gallery-slider.js-gallery-slider
+    .gallery-slider__inner
+      .gallery-slider__backdrop.js-gallery-slider-backdrop
+      .gallery-slider__container
+        .gallery-slider__header
+          a.gallery-slider__download.is-inline.js-gallery-slider-download(
+            href='#'
+            download
+          ) Скачать
+          button.gallery-slider__close.js-gallery-slider-close(
+            aria-label='Закрыть'
+          )
+        .gallery-slider__body
+          .gallery-slider__left
+            button.gallery-slider__arrow.is-prev.js-gallery-slider-prev(
+              aria-label='Предыдущий слайд'
+            )
+          .gallery-slider__center.js-gallery-slider-roll
+            ul.gallery-slider__list.js-gallery-slider-list
+          .gallery-slider__right
+            button.gallery-slider__arrow.is-next.js-gallery-slider-next(
+              aria-label='Следующий слайд'
+            )
+            a.gallery-slider__download.js-gallery-slider-download(
+              href='#'
+              download
+            ) Скачать

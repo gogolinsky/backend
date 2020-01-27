@@ -1,0 +1,32 @@
+/**
+* contact
+*/
+
+.contact {
+  $this: &;
+
+  &__caption {
+    color: $accent;
+    font-weight: $regular;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  &__value {
+    display: block;
+    margin-top: 7px;
+    color: $darkgrey;
+    font-weight: $semibold;
+    font-size: 16px;
+    line-height: 1.5;
+
+    &[href] {
+      text-decoration: none;
+      transition: ease color 300ms;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+}

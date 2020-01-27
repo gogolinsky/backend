@@ -1,0 +1,10 @@
+//- options
+
+include /components/option/option
+
+mixin options({ items })
+  .options
+    ul.options__list.grid.is-row
+      each item in items
+        li.options__item.col-4
+          +option(item)

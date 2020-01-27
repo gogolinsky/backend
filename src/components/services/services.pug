@@ -1,0 +1,12 @@
+//- services
+
+include /components/service/service
+
+mixin services({ items, grid = 4 })
+  .services
+    ul.services__list.grid.is-columns
+      each item in items
+        li.services__item.col-3(
+          class=`col-${12 / grid}`
+        )
+          +service(item)

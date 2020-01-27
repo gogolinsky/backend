@@ -1,0 +1,21 @@
+@mixin is-bordered_is-light {
+  $this: &;
+
+  &.is-bordered.is-light {
+    background-color: transparent;
+    border: 1px solid rgba(221, 228, 235, 0.3);
+    color: $white;
+    transition: ease border-color 300ms, ease background-color 300ms;
+
+    &:hover {
+      border-color: $accent;
+      background-color: $accent;
+      color: $white;
+    }
+
+    &:active {
+      border-color: lighten($accent, 10);
+      background-color: lighten($accent, 10);
+    }
+  }
+}

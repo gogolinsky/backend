@@ -1,0 +1,23 @@
+//- header-nav
+
+include /components/drop-menu/drop-menu
+
+mixin header-nav({ items })
+  header-nav( inline-template )
+    nav.header-nav(
+      class=page.header.light && 'is-light'
+    )
+      ul.header-nav__list
+        each item, index in items
+          li.header-nav__item(
+            class=item.dropmenu && 'has-dropmenu'
+          )
+            a.header-nav__link(
+              href=item.url
+              data-index=index
+              @click.prevent=item.dropmenu && 'openDropmenu'
+            )=item.title
+
+            if item.dropmenu
+              .header-nav__dropmenu
+                +drop-menu(item.dropmenu, { ref: 'dropmenu' + index })

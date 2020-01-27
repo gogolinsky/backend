@@ -1,0 +1,14 @@
+//- article
+
+include /components/headline/headline
+include /components/type/type
+include /components/author/author
+include /components/datalist/datalist
+include /components/article-info/article-info
+
+mixin article({ title })
+  article.article
+    header.article__header
+      h1.article__title=title
+    .article__body
+      block

@@ -1,0 +1,96 @@
+/**
+* form
+*/
+
+.form {
+  $this: &;
+
+  width: 100%;
+  padding: 50px;
+  padding-top: 40px;
+  position: relative;
+  background-color: $white;
+
+  &.is-bordered {
+    border: 1px solid $linegrey;
+  }
+
+  &__header {
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    color: $black;
+    font-size: 24px;
+    font-weight: $semibold;
+    line-height: 1;
+
+    &.is-big {
+      font-size: 26px;
+    }
+  }
+
+  &__header + &__body {
+    margin-top: 40px;
+  }
+
+  &__body {
+    margin-top: 35px;
+  }
+
+  &__control {
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: left;
+    line-height: 1;
+
+    &.is-required {
+      #{$this}__label {
+        &::after {
+          content: '*';
+          margin-left: 3px;
+          color: $second;
+        }
+      }
+    }
+
+    & + & {
+      margin-top: 20px;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 10px;
+    position: relative;
+    color: $grey;
+    font-family: $font-family;
+    font-size: 15px;
+    font-weight: $medium;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  &__field {
+    display: block;
+  }
+
+  &__select {
+    margin-top: 9px;
+    margin-bottom: 9px;
+  }
+
+  &__footer {
+    margin-top: 35px;
+  }
+
+  &__agreement {
+  }
+
+  &__button {
+    width: 100%;
+    margin-top: 30px;
+  }
+}

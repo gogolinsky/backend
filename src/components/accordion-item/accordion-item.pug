@@ -1,0 +1,39 @@
+//- accordion-item
+
+include /components/equipment/equipment
+
+mixin accordion-item({ id, title, caption, text, opened, equipment })
+  accordion-item(
+    inline-template
+    :initial=opened ? "true" : "false"
+  )
+    .accordion-item(
+      :class='{ "is-open": opened }'
+    )
+      .accordion-item__header(
+        tabindex=0
+        data-index=id
+        @click='toggle'
+        @keypress.enter.space='toggle'
+      )
+        .accordion-item__heading
+          h3.accordion-item__title=title
+          if caption
+            p.accordion-item__caption!=caption
+
+        svg.accordion-item__arrow
+          use(xlink:href='/img/sprite.svg#arrow')
+
+      transition(name="fade")
+        .accordion-item__body(
+          v-if='opened'
+        )
+          if text
+            .accordion-item__text.text!=text
+          else
+            .accordion-item__text.text
+              p С самого начала выверяем всё с максимальной точностью. Чем точнее первый этап, тем меньше в дальнейшем будет трудностей. Оснастку мы изготавливаем сперва на станке, а затем доводим вручную, пока она не будет на 100% соответствовать чертежу. Мы не начинаем штамповку, пока она не достигнет максимально точных размеров. Иначе у нас не бывает.
+
+          if equipment
+            .accordion-item__equipment
+              +equipment(equipment)

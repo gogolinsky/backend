@@ -1,0 +1,54 @@
+//- footer
+
+include /components/logo/logo
+include /components/links/links
+include /components/dc/dc
+
+mixin footer(params)
+  .footer
+    .container
+      .footer__top
+        .grid.is-row
+          .col-4
+            .footer__logo
+              +logo({
+                static: true
+              }).is-vertical.in-footer
+          .col-6
+            .footer__links
+              +links({
+                items: [
+                  {
+                    title: 'Услуги',
+                    url: '/services.html',
+                    list: [
+                      { title: 'Холодная штамповка', url: '/service.html'},
+                      { title: 'Гибка металла', url: '/service.html'},
+                      { title: 'Порошковая окраска и цинкование', url: '/service.html'},
+                      { title: 'Плазменная резка', url: '/service.html'},
+                      { title: 'Сварочные работы', url: '/service.html'},
+                    ]
+                  }
+                ]
+              })
+          .col-2
+            .footer__links
+              +links({
+                className: 'is-additional',
+                items: [
+                  { title: 'О компании', url: '/about.html' },
+                  { title: 'Контакты', url: '/contacts.html' },
+                ]
+              })
+
+      .footer__bottom
+        .grid.is-row.is-middle
+          .col-4
+            p.footer__copy © 2019 ООО ТехАрсенал, Смоленск
+          .col-4
+            a.footer__policy(
+              href='#'
+            ) Политика конфиденциальности
+          .col-4
+            .footer__dc
+              +dc
