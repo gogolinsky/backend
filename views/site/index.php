@@ -154,93 +154,93 @@ echo $this->render('/page/banners/slider', ['slider' => $slider]);
                             <div class="subsection__body">
                                 <div class="services">
                                     <ul class="services__list grid is-columns">
-                                       <?php foreach ($otherServices as $info): $i = rand(1, 6); ?>
-                                           <li class="services__item col-3 col-3">
-                                               <article class="service">
-                                                   <figure class="service__cover">
-                                                       <img class="service__image"
-                                                            src="/uploads/services/<?= $info['img'] ?>"
-                                                            alt="<?= $info['name'] ?>">
-                                                   </figure>
-                                                   <div class="service__body">
-                                                       <img class="service__icon" src="/img/service-ico-<?= $i ?>.svg" alt="">
-                                                       <h4 class="service__title">
-                                                           <a class="service__link" target="_blank" href="/page/service/<?= $info['alias'] ?>">
-                                                              <?= $info['name'] ?>
-                                                           </a>
-                                                       </h4>
-                                                   </div>
-                                               </article>
-                                           </li>
-                                       <?php endforeach; ?>
+                                        <?php foreach ($otherServices as $info): $i = rand(1, 6); ?>
+                                            <li class="services__item col-3 col-3">
+                                                <article class="service">
+                                                    <figure class="service__cover">
+                                                        <img class="service__image"
+                                                                src="/uploads/services/<?= $info['img'] ?>"
+                                                                alt="<?= $info['name'] ?>">
+                                                    </figure>
+                                                    <div class="service__body">
+                                                        <img class="service__icon" src="/img/service-ico-<?= $i ?>.svg" alt="">
+                                                        <h4 class="service__title">
+                                                            <a class="service__link" target="_blank" href="/page/service/<?= $info['alias'] ?>">
+                                                                <?= $info['name'] ?>
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                </article>
+                                            </li>
+                                        <?php endforeach; ?>
                                     </ul>
                                 </div>
                             </div>
                         </section>
                     </div>
                    <?php if (!empty($howWeWork)): ?>
-                       <div class="section__subsection">
-                           <section class="subsection">
-                               <div class="grid is-row">
-                                   <div class="col-6">
-                                       <header class="subsection__header">
-                                           <h3 class="subsection__title">
-                                              <?= Yii::$app->settings->get('Текст', 'Как мы работаем') ?>
-                                           </h3>
-                                       </header>
-                                       <div class="subsection__body">
-                                           <div class="subsection__accordion">
-                                               <div class="accordion">
-                                                   <ul class="accordion__list">
-                                                      <?php $i = 0;
-                                                      foreach ($howWeWork as $work): $i++;
-                                                         $true = ($i == 1) ? 'true' : 'false'; ?>
-                                                          <li class="accordion__item">
-                                                              <accordion-item inline-template
-                                                                              :initial="<?= $true ?>">
-                                                                  <div class="accordion-item"
-                                                                       :class="{ &quot;is-open&quot;: opened }">
-                                                                      <div class="accordion-item__header"
-                                                                           tabindex="<?= $i - 1 ?>"
-                                                                           data-index="<?= $i ?>"
-                                                                           @click="toggle"
-                                                                           @keypress.enter.space="toggle">
-                                                                          <div class="accordion-item__heading">
-                                                                              <h3 class="accordion-item__title">
-                                                                                 <?= $work['title'] ?></h3>
-                                                                          </div>
-                                                                          <svg class="accordion-item__arrow">
-                                                                              <use xlink:href="/img/sprite.svg#arrow"></use>
-                                                                          </svg>
-                                                                      </div>
-                                                                      <transition name="fade">
-                                                                          <div class="accordion-item__body"
-                                                                               v-if="opened">
-                                                                              <div class="accordion-item__text text">
-                                                                                  <p><?= $work['description'] ?></p>
-                                                                              </div>
-                                                                          </div>
-                                                                      </transition>
-                                                                  </div>
-                                                              </accordion-item>
-                                                          </li>
-                                                      <?php endforeach; ?>
-                                                   </ul>
-                                               </div>
-                                           </div>
-                                       </div>
-                                   </div>
-                                   <div class="col-6">
-                                       <div class="subsection__aside">
-                                           <img class="subsection__image" src="/img/press.gif" alt>
-                                       </div>
-                                   </div>
-                               </div>
-                           </section>
-                       </div>
-                   <?php endif; ?>
+                         <div class="section__subsection">
+                            <section class="subsection">
+                                  <div class="grid is-row">
+                                     <div class="col-6">
+                                        <header class="subsection__header">
+                                            <h3 class="subsection__title">
+                                                <?= Yii::$app->settings->get('Текст', 'Как мы работаем') ?>
+                                            </h3>
+                                        </header>
+                                        <div class="subsection__body">
+                                            <div class="subsection__accordion">
+                                                <div class="accordion">
+                                                    <ul class="accordion__list">
+                                                        <?php $i = 0;
+                                                        foreach ($howWeWork as $work): $i++;
+                                                            $true = ($i == 1) ? 'true' : 'false'; ?>
+                                                            <li class="accordion__item">
+                                                                <accordion-item inline-template
+                                                                                :initial="<?= $true ?>">
+                                                                    <div class="accordion-item"
+                                                                        :class="{ &quot;is-open&quot;: opened }">
+                                                                        <div class="accordion-item__header"
+                                                                            tabindex="<?= $i - 1 ?>"
+                                                                            data-index="<?= $i ?>"
+                                                                            @click="toggle"
+                                                                            @keypress.enter.space="toggle">
+                                                                            <div class="accordion-item__heading">
+                                                                                <h3 class="accordion-item__title">
+                                                                                    <?= $work['title'] ?></h3>
+                                                                            </div>
+                                                                            <svg class="accordion-item__arrow">
+                                                                                <use xlink:href="/img/sprite.svg#arrow"></use>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <transition name="fade">
+                                                                            <div class="accordion-item__body"
+                                                                                v-if="opened">
+                                                                                <div class="accordion-item__text text">
+                                                                                    <p><?= $work['description'] ?></p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </transition>
+                                                                    </div>
+                                                                </accordion-item>
+                                                            </li>
+                                                        <?php endforeach; ?>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="subsection__aside">
+                                            <img class="subsection__image" src="/img/press.gif" alt>
+                                        </div>
+                                    </div>
+                                </div>
+                             </section>
+                         </div>
+                    <?php endif; ?>
+                    </div>
                 </div>
-            </div>
         </section>
     </div>
     <?php endif; ?>
