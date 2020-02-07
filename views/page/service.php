@@ -461,6 +461,7 @@ echo $this->render('/page/banners/banner', ['service' => $service]);
                                                                           <div class="accordion-item__body" v-if="opened">
                                                                               <div class="accordion-item__text text">
                                                                                   <p><?= $service['description'] ?></p>
+                                                                                  <a href="/page/service/<?= $service['alias'] ?>"></a>
                                                                               </div>
                                                                              <?php if(!empty($subServicesEquipments[$service['id']])): ?>
                                                                                  <div class="accordion-item__equipment">
