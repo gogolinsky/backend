@@ -1,0 +1,112 @@
+/**
+* price-table
+*/
+
+.price-table {
+  $this: &;
+
+  width: 100%;
+  border: 2px solid $linegrey;
+  background-color: $white;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    color: $accent;
+    font-weight: $semibold;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+
+    thead {
+      tr {
+        color: $black;
+      }
+
+      tr:first-child {
+        font-weight: $regular;
+        color: $softgrey;
+
+        td:first-child {
+          color: $darkgrey;
+        }
+      }
+
+      tr:nth-child(2) {
+        td:nth-child(2n + 1) {
+          background-color: $lightgrey;
+        }
+      }
+    }
+
+    tbody {
+      td:first-child {
+        color: $black;
+        text-align: left;
+      }
+
+      td:nth-child(2n + 2) {
+        background-color: $lightgrey;
+      }
+
+      tr:last-child {
+        border-bottom: none;
+      }
+    }
+
+    tr {
+      border-bottom: 1px solid $linegrey;
+    }
+
+    td {
+      padding: 12px 14px;
+
+      &:first-child {
+        width: 170px;
+      }
+
+      &.is-sep[rowspan='2'] {
+        position: relative;
+        z-index: 0;
+
+        &::after {
+          content: '';
+          display: block;
+          width: 196px;
+          height: 1px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          overflow: hidden;
+          background-color: $linegrey;
+          transform-origin: left;
+          transform: rotate(29.5deg);
+        }
+
+        span {
+          width: 50%;
+          position: absolute;
+          bottom: 12px;
+          left: 15px;
+          text-align: left;
+          line-height: 1.2;
+        }
+
+        span:nth-child(2) {
+          width: 50%;
+          position: absolute;
+          left: auto;
+          right: 15px;
+          top: 12px;
+          text-align: right;
+        }
+      }
+    }
+
+    td + td {
+      border-left: 1px solid $linegrey;
+    }
+  }
+}

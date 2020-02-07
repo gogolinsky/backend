@@ -1,0 +1,13 @@
+//- subsection
+
+mixin subsection({ title, classList = '' })
+  section.subsection(
+    class=classList
+  )
+    if title
+      header.subsection__header
+        if title
+          h3.subsection__title!=title
+    if block
+      .subsection__body
+        block

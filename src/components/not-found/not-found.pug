@@ -1,0 +1,26 @@
+//- not-found
+
+include /components/button/button
+
+mixin not-found(options = {})
+  section.not-found
+    .container
+      header.not-found__header
+        h1.not-found__title=page.title
+      .not-found__body
+        .not-found__image
+      footer.not-found__footer
+        .not-found__button
+          +button({
+            type: 'link',
+            label: 'Перейти к услугам'
+          })(
+            href='/services.html'
+          ).is-wide.is-large
+        .not-found__button
+          +button({
+            type: 'link',
+            label: 'На главную'
+          })(
+            href='/'
+          ).is-bordered.is-wide.is-grey

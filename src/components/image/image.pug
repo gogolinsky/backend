@@ -1,0 +1,8 @@
+//- image
+
+mixin image({ src, fit })
+  img.image(
+    src=src
+    class=fit ? 'is-' + fit : ''
+    alt
+  )

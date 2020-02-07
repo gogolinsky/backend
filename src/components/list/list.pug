@@ -1,0 +1,9 @@
+//- list
+
+mixin list({ className = '', items })
+  ul.list(
+    class=className
+    class=page.header.light && 'is-light'
+  )
+    each item in items
+      li.list__item=item

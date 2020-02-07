@@ -1,0 +1,58 @@
+extend ./main
+
+block top
+
+  include /components/header/header
+  include /components/footer/footer
+  include /components/page-modal/page-modal
+
+  block params
+
+block body
+  #root
+    .page
+
+      header.page__header(
+        class=page.header.absolute && 'is-absolute'
+      )
+        +header({
+          nav: {
+            items: [
+              {
+                title: 'Услуги',
+                url: 'services.html',
+                dropmenu: {
+                  items: [
+                    { title: 'Холодная штамповка', url: '/service.html' },
+                    { title: 'Гибка металла', url: '/service2.html' },
+                    { title: 'Плазменная резка', url: '/service.html' },
+                    { title: 'Порошковая покраска и цинкование', url: '/service.html' },
+                    { title: 'Сварочные работы', url: '/service.html' },
+                  ]
+                }
+              },
+              {
+                title: 'О компании',
+                url: 'about.html'
+              },
+              {
+                title: 'Контакты',
+                url: 'contacts.html'
+              }
+            ]
+          }
+        })
+
+      main.page__content
+        .content
+          block content
+
+      footer.page__footer
+        +footer
+
+      .page__modal
+        +page-modal
+
+block bottom
+
+  block scripts

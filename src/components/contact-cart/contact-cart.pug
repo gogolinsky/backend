@@ -1,0 +1,36 @@
+//- contact-cart
+
+include /components/contacts/contacts
+include /components/contact-map/contact-map
+
+mixin contact-cart(options = {})
+  .contact-cart
+    .grid.is-row
+      .col-6.is-middle
+        .contact-cart__body
+          .contact-cart__contacts
+            +contacts({
+              align: 'is-middle'
+            })
+      .col-6
+        .contact-cart__aside
+          .contact-cart__map
+            +contact-map({
+              initial: {
+                center: [54.76947905613925,32.11584049999999], 
+                zoom: 16,
+                markers: [
+                  {
+                    address: 'Смоленск, дер. Тепличный Комбинат №1',
+                    coords: [54.76947905613925,32.11584049999999],
+                    image: {
+                      href: '/img/marker.svg',
+                      size: [65, 54],
+                      offset: [-19, -54]
+                    }
+                  },
+                ]
+              }
+            })
+
+

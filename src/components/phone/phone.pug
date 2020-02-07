@@ -1,0 +1,9 @@
+//- phone
+
+mixin phone({ value, classList = '', caption })
+  .phone( class=classList )
+    if caption
+      p.phone__caption=caption
+    a.phone__value(
+      href=`tel:${value}`
+    )=value

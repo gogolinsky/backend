@@ -1,0 +1,64 @@
+/**
+* arrow
+*/
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid rgba(242, 246, 248, 0.3);
+  color: $white;
+  transition: ease border-color 300ms, ease color 300ms;
+  cursor: pointer;
+
+  &,
+  & * {
+    outline: none !important;
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+    color: currentColor;
+  }
+
+  &.is-up {
+    transform: rotate(-90deg);
+  }
+
+  &.is-down {
+    transform: rotate(90deg);
+  }
+
+  &.is-left {
+    transform: rotate(180deg);
+  }
+
+  &.is-right {
+  }
+
+  &.is-small {
+    width: 42px;
+    height: 42px;
+  }
+
+  &.is-dark {
+    border-color: $linegrey;
+    color: $accent;
+  }
+
+  &.is-grey {
+    border-color: $linegrey;
+    color: $darkgrey;
+  }
+
+  &:not(.no-hover):hover {
+    color: $accent;
+    border-color: $accent;
+  }
+}

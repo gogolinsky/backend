@@ -1,0 +1,56 @@
+/**
+* section
+*/
+
+.section {
+  $this: &;
+
+  &.has-small-title {
+    #{$this}__title {
+      font-size: 26px;
+      font-weight: $medium;
+    }
+  }
+
+  &__header {
+  }
+
+  &__title {
+    margin: 0;
+    color: $black;
+    font-weight: $semibold;
+    font-size: 34px;
+    line-height: 1.24;
+  }
+
+  &__body {
+  }
+
+  &__header + &__body {
+    margin-top: 40px;
+  }
+
+  &__subsection {
+    & + & {
+      margin-top: 105px;
+    }
+  }
+
+  &__aside {
+  }
+
+  &__info {
+    padding: 60px 0;
+    border-bottom: 1px solid $linegrey;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &__pricelist {
+    margin-top: 40px;
+    padding-left: 100px;
+    border-left: 1px solid $lightgrey;
+  }
+}

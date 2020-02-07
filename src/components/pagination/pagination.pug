@@ -1,0 +1,23 @@
+//- pagination
+
+mixin pagination({ pages, current })
+  .pagination
+    ul.pagination__list
+
+      each page in pages
+
+        li.pagination__item(
+          class=page == current && 'is-current'
+        )
+          if page == current
+            span.pagination__label=page
+          else
+            a.pagination__link(
+              href='#',
+              title='Страница ' + page
+            )=page
+
+      li.pagination__item.is-next
+        a.pagination__link(
+          href='#'
+        ) Следующая

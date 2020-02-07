@@ -1,0 +1,7 @@
+@mixin is-wide {
+  $this: &;
+
+  &.is-wide {
+    width: 100%;
+  }
+}

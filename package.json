@@ -1,0 +1,59 @@
+{
+  "name": "arsenal",
+  "private": true,
+  "author": "dancecolor",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:gorkunov-mv/arsenal.git"
+  },
+  "scripts": {
+    "start": "brunch watch --server",
+    "build": "brunch build --production && node postcss --production",
+    "compress": "gulp compress",
+    "sprite": "gulp sprite",
+    "postcss": "node postcss",
+    "test": "lighthouse http://localhost:3333/ --view --open",
+    "deploy": "npm run build && now build -n arsenal && now alias arsenal.gorku.now.sh"
+  },
+  "devDependencies": {
+    "auto-reload-brunch": "^2",
+    "autoprefixer": "^6.3",
+    "babel-brunch": "~6.0",
+    "babel-preset-latest": "^6",
+    "@babel/polyfill": "^7.6.0",
+    "brunch": "^2",
+    "copycat-brunch": "^1.1.1",
+    "cssnano": "^4.1.10",
+    "dotenv": "^7.0.0",
+    "gulp": "^4.0.0",
+    "gulp-cheerio": "^0.6.3",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-rename": "^1.4.0",
+    "gulp-svgmin": "^2.1.0",
+    "gulp-svgstore": "^7.0.1",
+    "gulp-tinypng": "^1.0.2",
+    "morgan": "^1.9.1",
+    "postcss": "^7.0.16",
+    "postcss-image-inliner": "^3.0.0",
+    "postcss-object-fit-images": "^1.1.2",
+    "pugjs-brunch": "^2.11.3",
+    "sass-brunch": "^2.10.8",
+    "terser-brunch": "^3.0.0",
+    "vue-brunch": "^2.0.3"
+  },
+  "dependencies": {
+    "@rqrauhvmra/tobi": "^1.9.0",
+    "animejs": "^3.0.1",
+    "axios": "^0.19.0",
+    "node-sass": "^4.13.1",
+    "object-fit-images": "^3.2.4",
+    "svg4everybody": "^2.1.9",
+    "swiper": "^4.5.0",
+    "vanilla-modal": "^1.6.5",
+    "vee-validate": "^2.2.15",
+    "vue": "^2.6.10",
+    "vue-clickaway": "^2.2.2",
+    "vue-the-mask": "^0.11.1"
+  }
+}

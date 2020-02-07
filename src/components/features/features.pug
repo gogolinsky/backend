@@ -1,0 +1,10 @@
+//- features
+
+include /components/feature/feature
+
+mixin features({ items })
+  .features
+    ul.features__list.grid.is-columns
+      each item in items
+        li.features__item.col-6
+          +feature(item)

@@ -1,0 +1,59 @@
+//- image-gallery
+
+include /components/arrow/arrow
+
+mixin image-gallery({ items })
+  image-gallery(
+    inline-template
+  )
+    .image-gallery(
+      :class='{ "is-ready": ready }'
+    )
+      .image-gallery__inner
+        .image-gallery__body
+          .image-gallery__slider(
+            ref='slider'
+          )
+            ul.image-gallery__list(
+              ref='sliderList'
+            )
+              each item, index in items
+                li.image-gallery__item(
+                  ref='sliderItem'
+                )
+                  a.image-gallery__cover.lightbox(
+                    data-group="image-gallery"
+                    href=item.src
+                  )
+                    img.image-gallery__image(
+                      src=item.src
+                      alt
+                    )
+                    .image-gallery__heading
+                      h5.image-gallery__title(
+                        data-swiper-parallax-x='-100'
+                      )=item.title + (index + 1)
+        .image-gallery__footer
+          button.image-gallery__arrow(
+            ref='prev'
+          )
+            +arrow({ classList: 'is-left is-grey' })
+          .image-gallery__roll(
+            ref='roll'
+          )
+            ul.image-gallery__thumbs(
+              ref='rollList'
+            )
+              each item, index in items
+                li.image-gallery__thumb(
+                  ref='rollItem'
+                  @click='clickHandler'
+                )
+                  img.image-gallery__image(
+                    src=item.src
+                    alt
+                  )
+          button.image-gallery__arrow(
+            ref='next'
+          )
+            +arrow({ classList: 'is-grey' })

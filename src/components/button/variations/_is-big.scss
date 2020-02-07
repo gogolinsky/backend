@@ -1,0 +1,7 @@
+@mixin is-big {
+  $this: &;
+
+  &.is-big {
+    padding: 20px 34.5px 19px;
+  }
+}

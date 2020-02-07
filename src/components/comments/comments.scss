@@ -1,0 +1,37 @@
+/**
+* comments
+*/
+
+.comments {
+  $this: &;
+
+  &__header {
+    padding-top: 10px;
+  }
+
+  &__title {
+    color: $black;
+    font-weight: $semibold;
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  &__header + &__body {
+    margin-top: 10px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 30px 0;
+    border-bottom: 1px solid #edeff2;
+  }
+
+  &__form {
+    margin-top: 60px;
+  }
+}

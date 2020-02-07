@@ -1,0 +1,15 @@
+//- feature
+
+mixin feature({ cover, title, icon })
+  article.feature
+    figure.feature__cover
+      img.feature__image(
+        src=cover
+        alt=title
+      )
+    .feature__body
+      img.feature__icon(
+        src=icon
+        alt
+      )
+      h4.feature__title!=title

@@ -1,0 +1,43 @@
+/**
+* breadcrumb
+*/
+
+.breadcrumb {
+  $this: &;
+
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: -5px;
+  padding: 0;
+  line-height: 1;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    color: $softgrey;
+    font-size: 13px;
+    line-height: 1;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 3px;
+      margin-left: 10px;
+      border-radius: 50%;
+      background-color: $accent;
+    }
+  }
+
+  &__link {
+    color: currentColor;
+    text-decoration: none;
+    transition: ease color 300ms;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}

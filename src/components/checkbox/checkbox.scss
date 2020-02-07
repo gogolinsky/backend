@@ -1,0 +1,85 @@
+/**
+* checkbox
+*/
+
+.checkbox {
+  $this: &;
+
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+  justify-content: space-between;
+  position: relative;
+  color: $softgrey;
+  font-weight: $regular;
+  font-style: normal;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+
+  &.is-agreement {
+  }
+
+  &__input {
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 1px;
+    opacity: 0;
+  }
+
+  &__label {
+    display: block;
+    padding-left: 30px;
+    position: relative;
+    color: currentColor;
+    line-height: 1.46;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 19px;
+      height: 19px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $white;
+      border: 1px solid $softgrey;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 22px;
+      position: absolute;
+      top: -4px;
+      left: 2px;
+      background-image: url(/img/checkbox-inner.svg);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+      opacity: 0;
+      transition: opacity $ease 200ms;
+    }
+
+    a {
+      color: $accent;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__input:checked + &__label::after {
+    opacity: 1;
+  }
+
+  &__input.is-focused + &__label::before {
+    outline: 2px dashed #86d3ff;
+  }
+}

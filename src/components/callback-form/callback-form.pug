@@ -1,0 +1,58 @@
+//- callback-form
+
+include /components/v-input/v-input
+include /components/attach/attach
+include /components/checkbox/checkbox
+include /components/button/button
+
+mixin callback-form(options = {})
+  callback-form(
+    inline-template
+  )
+    validation-observer(
+      ref="observer"
+    )
+      form.callback-form.form(
+        action='/thanks.html'
+        @submit='onsubmit'
+      )
+        header.form__header
+          h3.form__title.title=options.title || 'Заказать обратный звонок'
+
+        .form__body
+          .grid.is-columns
+            .col-6
+              .form__control
+                .form__field
+                  +v-input({
+                    name: 'name',
+                    placeholder: 'Ваше имя'
+                  })
+            .col-6
+              .form__control
+                .form__field
+                  +v-input({
+                    name: 'name',
+                    mask: '"+7 (###) ### ## ##"',
+                    rules: 'required|phone',
+                    placeholder: 'Номер телефона'
+                  })
+
+            if options.hasAttach
+              .col-12
+                .form__control
+                  .form__field
+                    +attach()(
+                      name='file'
+                    )
+
+        footer.form__footer
+          .form__agreement
+            +checkbox({
+              name: 'agreement',
+              label: 'Заказывая обратный звонок, даю согласие на обработку <a href="/policy.html">персональных данных</a>'
+            })( required )
+          .form__button
+            +button({
+              label: options.action || 'Перезвоните мне в течении 20 минут'
+            }).is-wide.is-large

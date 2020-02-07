@@ -1,0 +1,85 @@
+//- example-showcase
+
+include /components/arrow/arrow
+include /components/info-item/info-item
+
+mixin example-showcase({ items })
+  example-showcase(
+    inline-template
+  )
+    .example-showcase(
+      :class='{ "is-ready": ready }'
+    )
+      .example-showcase__inner
+        .grid.is-row
+          .col-6
+            .example-showcase__left(
+              ref='leftSlider'
+            )
+              ul.example-showcase__slider(
+                ref='leftSliderList'
+              )
+                each item in items
+                  li.example-showcase__slide(
+                    ref='leftSliderItem'
+                  )
+                    a.example-showcase__cover.lightbox(
+                      data-group='example'
+                      href=item.image
+                    )
+                      img.example-showcase__image(
+                        src=item.image
+                        alt
+                      )
+                      img.example-showcase__schema(
+                        data-swiper-parallax-x='-60'
+                        src=item.schema
+                        alt
+                      )
+              .example-showcase__arrows
+                button.example-showcase__arrow(
+                  ref='prev'
+                )
+                  +arrow({ classList: 'is-left is-grey '})
+                button.example-showcase__arrow(
+                  ref='next'
+                )
+                  +arrow({ classList: 'is-grey '})
+          .col-6
+            .example-showcase__right(
+              ref='rightSlider'
+            )
+              ul.example-showcase__slider(
+                ref='rightSliderList'
+              )
+                each item in items
+                  li.example-showcase__slide(
+                    ref='rightSliderItem'
+                  )
+                    .example-showcase__body
+                      .example-showcase__header
+                        h4.example-showcase__title(
+                          data-swiper-parallax-x='-80'
+                        )=item.title
+                        .example-showcase__descr.text(
+                          data-swiper-parallax-x='-150'
+                        )!=item.descr
+                      .example-showcase__info(
+                        data-swiper-parallax-x='-220'
+                      )
+                        .grid.is-columns
+                          .col-6
+                            +info-item({
+                              title: 'Выполнили в срок:',
+                              text: item.term
+                            })
+                          .col-6
+                            +info-item({
+                              title: 'Потребовалось металла:',
+                              text: item.material
+                            })
+                          .col-12
+                            +info-item({
+                              title: 'Стоимость:',
+                              text: item.cost
+                            })

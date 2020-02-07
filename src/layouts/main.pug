@@ -1,0 +1,49 @@
+-
+  var page = {
+    id: 0,
+    title: 'Index',
+    header: {}
+  };
+
+block top
+
+doctype html
+html.html(lang='ru')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='description', content='')
+    meta(name='keywords', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='format-detection' content='telephone=no')
+
+    meta(property='og:type' content='website')
+    meta(property='og:url' content='')
+    meta(property='og:title' content='')
+    //- meta(property='og:image' content='/img/share.png')
+    meta(property='og:description' content='')
+    meta(property='og:site_name' content=page.title)
+    meta(property='og:locale' content='ru_RU')
+
+    script document.documentElement.classList.add('js');
+
+    title=page.title
+
+    link(
+      rel='stylesheet'
+      href='/css/style.css'
+    )
+
+    link( 
+      rel='shortcut icon'
+      href='/img/favicon.ico'
+      type='image/x-icon'
+    )
+
+  body.body
+
+    block body
+
+    script(src=`js/app.js?${Date.now()}`)
+
+  block bottom

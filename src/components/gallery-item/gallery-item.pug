@@ -1,0 +1,15 @@
+//- gallery-item
+
+mixin gallery-item({ image, source, title, className })
+  figure.gallery-item
+    a.gallery-item__cover(
+      target='_blank'
+      href=source
+      title=title
+      class=className || ''
+    )
+      img.gallery-item__image(
+        src=image
+        alt=title
+      )
+    figcaption.gallery-item__text!=title

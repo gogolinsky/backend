@@ -1,0 +1,32 @@
+//- contact-map
+
+//- EXAMPLE
+//-
+//- map: {
+//-   options: {
+//-     center: [55.830057600359595,37.458438893886715], 
+//-     zoom: 17,
+//-     markers: [
+//-       {
+//-         address: '214013, Смоленск, Черняховского 6',
+//-         coords: [55.82978580165504,37.45769535449214],
+//-         image: {
+//-           href: '/img/marker.png',
+//-           size: [30, 38],
+//-           offset: [-15, -38]
+//-         }
+//-       },
+//-     ]
+//-   }
+//- }
+
+mixin contact-map({ initial })
+  contact-map(inline-template)
+    .contact-map(
+      :class='{ "is-ready": ready }'
+    )
+      .contact-map__container(
+        ref='container'
+        data-initial=initial
+      )
+

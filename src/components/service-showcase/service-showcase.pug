@@ -1,0 +1,45 @@
+//- service-showcase
+
+include /components/examples/examples
+include /components/link/link
+
+mixin service-showcase(options = {})
+  .service-showcase
+    .grid.is-row.is-middle
+      .col-4
+        .service-showcase__header
+          h2.service-showcase__title.title Холодная штамповка
+          p.service-showcase__descr Производим детали  методом холодной штамповки по чертежам. Доводим оснастку до идеальной формы и соответствия чертежу.
+          p.service-showcase__warn Минимальный заказ — 100 шт
+          .service-showcase__link
+            +link({
+              href: '/service.html',
+              text: 'Перейти к услуге'
+            })
+      .col-6.shift-1
+        .service-showcase__body
+          .service-showcase__examples
+            +examples({
+              items: [
+                {
+                  number: '01',
+                  title: 'Дверные петли',
+                  image: '/img/example-1.png',
+                },
+                {
+                  number: '02',
+                  title: 'Проводные короба',
+                  image: '/img/example-2.png',
+                },
+                {
+                  number: '03',
+                  title: 'Дверные петли',
+                  image: '/img/example-3.png',
+                },
+                {
+                  number: '04',
+                  title: 'По вашему чертежу...',
+                  image: '/img/example-4.png',
+                },
+              ]
+            })

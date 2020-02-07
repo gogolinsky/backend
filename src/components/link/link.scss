@@ -1,0 +1,32 @@
+/**
+* link
+*/
+
+.link {
+  $this: &;
+
+  display: inline-block;
+  color: $black;
+  font-weight: $medium;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  transition: ease color 300ms;
+
+  &:hover {
+    color: $accent;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+  }
+
+  &__arrow {
+    margin-left: 12px;
+  }
+}

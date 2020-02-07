@@ -18,21 +18,15 @@
         "yiisoft/yii2": "~2.0.14",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
-        "kartik-v/yii2-editable": "*",
-        "kartik-v/yii2-grid": "@dev",
+        "kartik-v/yii2-editable": "1.7.8",
+        "kartik-v/yii2-grid": "3.3.4",
         "kartik-v/yii2-widget-select2": "dev-master",
-        "yii2mod/yii2-settings": "*",
-        "yii2mod/yii2-rbac": "*",
-        "cocur/slugify": "^3.2"
+        "yii2mod/yii2-settings": "2.5",
+        "yii2mod/yii2-rbac": "2.3",
+        "cocur/slugify": "3.2"
     },
     "require-dev": {
-        "yiisoft/yii2-debug": "~2.1.0",
-        "yiisoft/yii2-gii": "~2.1.0",
-        "yiisoft/yii2-faker": "~2.0.0",
-        "codeception/base": "~2.3.0",
-        "codeception/verify": "~0.4.0",
-        "codeception/specify": "~0.4.6",
-        "symfony/browser-kit": ">=2.7 <=4.2.4"
+        "yiisoft/yii2-debug": "~2.1.0"
     },
     "config": {
         "process-timeout": 1800,

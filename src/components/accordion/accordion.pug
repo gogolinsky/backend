@@ -1,0 +1,17 @@
+//- accordion
+
+include /components/accordion-item/accordion-item
+
+mixin accordion({ items })
+  .accordion
+    ul.accordion__list
+      each item in items
+        li.accordion__item
+          +accordion-item({
+            id: item.id,
+            title: item.title,
+            caption: item.caption,
+            text: item.text,
+            equipment: item.equipment,
+            opened: item.id == 1
+          })

@@ -1,0 +1,131 @@
+/**
+* page-tabs
+*/
+
+.page-tabs {
+  $this: &;
+
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+
+  .js & {
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      top: calc(50% - 40px);
+      left: calc(50% - 40px);
+      z-index: 1;
+      background-image: url(/img/spinner.svg);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+
+    #{$this}__inner {
+      opacity: 0;
+      pointer-events: none;
+      transition: ease opacity 200ms;
+    }
+  }
+
+  &.is-ready {
+    &::after {
+      display: none;
+    }
+
+    #{$this}__inner {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__inner {
+  }
+
+  &__header {
+  }
+
+  &__toggles {
+    display: flex;
+    align-items: center;
+  }
+
+  &__toggle {
+    display: inline-block;
+    padding: 15px 24px 14px;
+    position: relative;
+    z-index: 0;
+    color: $softgrey;
+    background-color: transparent;
+    border: 1px solid $linegrey;
+    font-weight: $medium;
+    font-style: normal;
+    font-family: $font-family;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    vertical-align: top;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    will-change: border-color, background-color, color;
+    transition: ease border-color 300ms, ease color 300ms,
+      ease background-color 300ms;
+    cursor: pointer;
+
+    &:hover {
+      color: $accent;
+      border-color: $accent;
+    }
+
+    @include variable-font;
+
+    &.is-active {
+      color: $white;
+      background-color: $accent;
+      border-color: $accent;
+      pointer-events: none;
+    }
+
+    & + & {
+      margin-left: 20px;
+    }
+  }
+
+  &__body {
+    margin-top: 30px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    list-style: none;
+    transition-property: transform, height;
+    will-change: transform, height;
+  }
+
+  &__item {
+    display: block;
+    flex: 1 0 auto;
+    height: auto;
+    position: relative;
+    pointer-events: none;
+    transition-timing-function: ease-out;
+    transition-property: transform, opacity;
+
+    &.swiper-slide-active {
+      pointer-events: auto;
+    }
+  }
+}

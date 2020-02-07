@@ -1,0 +1,18 @@
+//- posts
+
+include /components/tags/tags
+include /components/post/post
+include /components/pagination/pagination
+
+mixin posts({ items, pagination })
+  .posts
+    .posts__body
+      ul.posts__list.grid.is-columns
+        each item in items
+          li.posts__item.col-4
+            +post(item)
+
+      if pagination
+        .posts__footer
+          .posts__pagination
+            +pagination(pagination)

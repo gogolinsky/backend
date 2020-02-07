@@ -1,0 +1,17 @@
+//- drop-menu
+
+mixin drop-menu({ items }, { ref })
+  drop-menu( 
+    inline-template
+    ref=ref
+  )
+    .drop-menu(
+      v-on-clickaway='close'
+      :class="{ 'is-open': opened }"
+    )
+      ul.drop-menu__list
+        each item in items
+          li.drop-menu__item
+            a.drop-menu__link(
+              href=item.url || '#'
+            )=item.title

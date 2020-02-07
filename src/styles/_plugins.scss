@@ -1,0 +1,11 @@
+@import '@rqrauhvmra/tobi/scss/tobi';
+
+body .tobi {
+  & * {
+    outline: none !important;
+  }
+
+  &__slider:not(.tobi__slider--is-dragging) {
+    transition-duration: 1000ms;
+  }
+}

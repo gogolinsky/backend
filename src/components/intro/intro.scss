@@ -1,0 +1,47 @@
+/**
+* intro
+*/
+
+.intro {
+  $this: &;
+
+  &__label {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    color: $black;
+    font-weight: $medium;
+    font-size: 18px;
+    line-height: 1;
+
+    i {
+      color: $accent;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 1px;
+      margin-right: 12px;
+      background-color: $linegrey;
+    }
+  }
+
+  &__body {
+  }
+
+  &__text {
+    margin: 0;
+    color: $black;
+    font-weight: $medium;
+    font-size: 26px;
+    line-height: 1.62;
+  }
+
+  &__opinion {
+    margin-top: 50px;
+    padding-top: 50px;
+    border-top: 1px solid $linegrey;
+  }
+}

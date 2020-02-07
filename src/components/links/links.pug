@@ -1,0 +1,19 @@
+//- links
+
+mixin links({ items, className = '' })
+  .links(
+    class=className
+  )
+    ul.links__list
+      each item in items
+        li.links__item
+          a.links__link(
+            href=item.url
+          )=item.title
+          if item.list
+            ul.links__sublist
+              each subitem in item.list
+                li.links__subitem
+                  a.links__sublink(
+                    href=subitem.url
+                  )=subitem.title

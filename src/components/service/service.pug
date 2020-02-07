@@ -1,0 +1,18 @@
+//- service
+
+mixin service({ icon, title, cover })
+  article.service
+    figure.service__cover
+      img.service__image(
+        src=cover
+        alt=title
+      )
+    .service__body
+      img.service__icon(
+        src=icon
+        alt
+      )
+      h4.service__title
+        a.service__link(
+          href='/service.html'
+        )=title

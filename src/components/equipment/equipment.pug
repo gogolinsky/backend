@@ -1,0 +1,13 @@
+//- equipment
+
+mixin equipment({ image, title, descr })
+  article.equipment
+    figure.equipment__cover
+      img.equipment__image(
+        src=image
+        alt
+      )
+    header.equipment__header
+      p.equipment__caption Используемое оборудование: 
+      h3.equipment__title=title
+      p.equipment__descr=descr

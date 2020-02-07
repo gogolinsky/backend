@@ -1,0 +1,169 @@
+/**
+* text
+*/
+
+.text {
+  $this: &;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+
+    &:not(:first-child) {
+      margin-top: 2em;
+    }
+  }
+
+  a {
+    color: $accent;
+    transition: ease color 300ms;
+
+    &:hover {
+      color: $second;
+    }
+  }
+
+  strong,
+  b {
+    color: $black;
+    font-style: italic;
+    font-weight: $semibold;
+  }
+
+  img {
+    display: block;
+    margin: 1.5em 0;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    & + p,
+    & + ul,
+    & + ol {
+      margin-top: 1em;
+    }
+  }
+
+  ul {
+    padding: 0;
+    position: relative;
+    list-style: none;
+
+    li {
+      padding-left: 15px;
+      position: relative;
+      color: $dark;
+      font-weight: $medium;
+      font-size: 15px;
+      line-height: 1.733;
+      letter-spacing: -0.02em;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 3px;
+        height: 3px;
+        position: absolute;
+        left: 0;
+        top: 11px;
+        background-color: $second;
+      }
+    }
+
+    li + li {
+      margin-top: 15px;
+    }
+  }
+
+  blockquote,
+  img,
+  p,
+  ul {
+    margin: 1.5em 0;
+
+    &:last-child:first-child {
+      margin: 0;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  blockquote {
+    margin: 1.3em 0;
+    position: relative;
+    color: $black;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 1.4;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 1px solid $grey;
+
+    p {
+      margin: 5px 0;
+    }
+
+    thead {
+      td,
+      th {
+        padding: 15px 20px;
+        color: #686c90;
+        font-size: 11px;
+        line-height: 1;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        text-align: left;
+      }
+    }
+
+    tbody {
+      td,
+      th {
+        padding: 15px 20px;
+        color: $dark;
+        font-size: 16px;
+        text-align: left;
+        line-height: 1.68;
+
+        &:first-child {
+          font-weight: $medium;
+        }
+
+        &:not(:first-child) {
+          color: #686c90;
+        }
+      }
+
+      td:nth-child(2) ~ td {
+        border-left: 1px solid #e4e8f4;
+      }
+
+      tr {
+        border-top: 1px solid $grey;
+        vertical-align: top;
+
+        &:nth-child(even) {
+          background-color: #f4f6fb;
+        }
+      }
+    }
+  }
+}

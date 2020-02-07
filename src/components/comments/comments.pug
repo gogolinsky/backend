@@ -1,0 +1,20 @@
+//- comments
+
+include /components/comment/comment
+include /components/comments-form/comments-form
+
+mixin comments({ title, comments, hasForm})
+  section.comments
+    if title
+      header.comments__header
+        h2.comments__title=title
+
+    .comments__body
+      ul.comments__list
+        each comment in comments
+          li.comments__item
+            +comment(comment)
+
+      if hasForm
+        .comments__form
+          +comments-form

@@ -1,0 +1,31 @@
+//- thanks
+
+include /components/button/button
+include /components/phone/phone
+
+mixin thanks(options = {})
+  section.thanks(
+    class=options.compact && 'is-compact'
+  )
+    .thanks__container(
+      class=!options.compact && 'container'
+    )
+      header.thanks__header
+        if !options.compact
+          h1.thanks__title Спасибо!
+        p.thanks__caption Наш техник скоро свяжется с вами,<br>и Вы зададите ему любые вопросы
+      footer.thanks__footer
+        if options.compact
+          .not-found__phone
+            +phone({
+              classList: 'is-big is-centred',
+              caption: 'Позвоните нам',
+              value: '8 (952) 687-58-04'
+            })
+        else
+          .not-found__button
+            +button({
+              label: 'Не хочется ждать?'
+            })(
+              data-modal='thanks'
+            ).is-wide.is-large

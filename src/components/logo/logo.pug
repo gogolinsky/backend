@@ -1,0 +1,17 @@
+//- logo
+
+mixin logo(options = {})
+  if page.id == 1 || options.static
+    .logo(
+      class=page.header.light && 'is-light'
+    )&attributes(attributes)
+      .logo__label <i>Тех</i>Арсенал
+      .logo__caption Современный подход<br>к&nbsp;холодной штамповке
+  else
+    a.logo(
+      class=page.header.light && 'is-light'
+      href='/'
+      title='Главная страница'
+    )&attributes(attributes)
+      .logo__label <i>Тех</i>Арсенал
+      .logo__caption Современный подход<br>к&nbsp;холодной штамповке

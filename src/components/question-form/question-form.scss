@@ -1,0 +1,18 @@
+/**
+* question-form
+*/
+
+.question-form {
+  $this: &;
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__button {
+    max-width: 320px;
+    margin: 0 0 0 30px !important;
+  }
+}

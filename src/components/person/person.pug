@@ -1,0 +1,12 @@
+//- person
+
+mixin person({ image, name, position })
+  article.person
+    figure.person__cover
+      img.person__image(
+        src=image
+        alt=name
+      )
+    header.person__header
+      h4.person__name=name
+      p.person__position=position

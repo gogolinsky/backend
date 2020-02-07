@@ -1,0 +1,34 @@
+//- page-tabs
+
+include /components/price-table/price-table
+
+mixin page-tabs({ tabs })
+  page-tabs( inline-template )
+    .page-tabs(
+      :class='{ "is-ready": ready }'
+    )
+      .page-tabs__inner
+        .page-tabs__header
+          .page-tabs__toggles(
+            ref='toggles'
+          )
+            each tab, index in tabs
+              button.page-tabs__toggle(
+                class=index==0 && 'is-active'
+                data-tab-index=index
+                @click='goto'
+              )=tab.title
+        .page-tabs__body(
+          ref='swiper'
+        )
+          ul.page-tabs__list(
+            ref='list'
+          )
+            each tab, index in tabs
+              li.page-tabs__item(
+                ref='item'
+              )
+                .page-tabs__fx(
+                  data-swiper-parallax-x=-20
+                )
+                  +price-table

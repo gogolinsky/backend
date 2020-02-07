@@ -1,0 +1,26 @@
+/**
+* contact-cart
+*/
+
+.contact-cart {
+  $this: &;
+
+  background-color: $white;
+  border: 1px solid $linegrey;
+
+  &__body {
+    padding: 50px;
+  }
+
+  &__contacts {
+  }
+
+  &__aside {
+    height: 100%;
+  }
+
+  &__map {
+    height: 100%;
+    min-height: 418px;
+  }
+}

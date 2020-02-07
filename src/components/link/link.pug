@@ -1,0 +1,12 @@
+//- link
+
+include /components/arrow/arrow
+
+mixin link({ href, text })
+  a.link( href=href )
+    .link__inner
+      span.link__text=text
+      .link__arrow
+        +arrow({
+          classList: 'is-small is-dark no-hover'
+        })

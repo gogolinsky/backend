@@ -1,0 +1,31 @@
+//- history-item
+
+mixin history-item({ year })
+  article.history-item
+    figure.history-item__cover
+      img.history-item__image(
+        alt
+        src='/img/history-item-1.jpg'
+      )
+    .grid.is-row
+      .col-6.shift-3
+        .history-item__inner
+          header.history-item__header(
+            data-swiper-parallax-x=-20
+          )
+            time.history-item__year=year
+            h2.history-item__title С чего все начиналось
+          .history-item__body
+            .history-item__text.text(
+              data-swiper-parallax-x=-40
+            )
+              p Идейным вдохновителем был Дмитрий Семёнов. Как-то ему были нужны качественные детали для станка цеха отца, который достался ему по наследству.
+              p Он изучил рынок и выяснил, что в Смоленске нет качественных деталей. Их пришлось заказывать у китайских штамповщиков. Тогда Дмитрийи решил, что мы тоже можем заниматься штамповкой в Смоленске...
+
+          footer.history-item__footer
+            .history-item__person(
+              data-swiper-parallax-x=-60
+            )
+              .person.is-light.is-simple
+                .person__name Дмитрий Семенов
+                .person__position Основатель компании

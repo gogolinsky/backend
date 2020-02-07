@@ -1,0 +1,9 @@
+//- button
+mixin button({ type, label })
+  case type
+
+    when 'link'
+      a.button&attributes(attributes)!=label
+
+    default
+      button.button&attributes(attributes)!=label

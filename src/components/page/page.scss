@@ -1,0 +1,41 @@
+/**
+* page
+*/
+
+.page {
+  $this: &;
+
+  display: flex;
+  flex-direction: column;
+  max-width: 1920px;
+  min-width: $minwidth + $gap;
+  min-height: 100vh;
+  margin: auto;
+  position: relative;
+  z-index: $layer-1;
+  background-color: $white;
+
+  &__header {
+    width: 100%;
+    flex-shrink: 0;
+
+    &.is-absolute {
+      min-width: $minwidth;
+      position: absolute;
+    }
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__content,
+  &__footer {
+    flex-grow: 1;
+  }
+
+  &__footer {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+}

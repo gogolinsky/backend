@@ -1,0 +1,14 @@
+//- comment
+
+mixin comment({ image, date, name, text })
+  article.comment
+    .comment__header
+      .comment__cover
+        img.comment__image(
+          src=image
+          alt=name
+        )
+      .comment__group
+        time.comment__date=date
+        h4.comment__name=name
+    p.comment__text=text

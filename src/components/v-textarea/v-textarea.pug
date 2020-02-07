@@ -1,0 +1,25 @@
+//- v-textarea
+
+mixin v-textarea({ name, placeholder, rules })
+  v-textarea(
+    inline-template
+    :field-name=`"${name}"`
+    :visible-errors='[]'
+  )
+    validation-provider.v-textarea(
+      rules=rules
+      ref="provider"
+      :class='{ "is-active": active, "is-ready": ready }'
+    )
+      label.v-textarea__label
+        span.v-textarea__placeholder=placeholder
+        textarea.v-textarea__field(
+          name=name
+          v-model='value'
+          @focus='handler("focus")'
+          @blur='handler("blur")'
+        )
+      span.v-textarea__errors(
+          v-if='$refs.provider && $refs.provider.messages.length > 0'
+        )
+          span.v-textarea__error(v-for='error in $refs.provider.messages') {{ error }}
