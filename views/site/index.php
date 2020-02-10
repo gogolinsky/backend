@@ -109,7 +109,7 @@ echo $this->render('/page/banners/slider', ['slider' => $slider]);
                                                         <div class="example__header"
                                                              data-number="03">
                                                             <h4 class="example__title">
-                                                               <?= Yii::$app->settings->get('Главная', 'дверные_петли') ?>
+                                                               <?= Yii::$app->settings->get('Главная', 'дверные_петли2') ?>
                                                             </h4>
                                                         </div>
                                                         <div class="example__cover">

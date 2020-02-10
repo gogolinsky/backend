@@ -157,18 +157,14 @@ class ServicesController extends Controller
       /**************форма добавление услуг*********************/
       if ($serviceModel->load(Yii::$app->request->post())) {
          $serviceImage = UploadedFile::getInstance($serviceModel, 'img');
-         $maxId = Services::find()->max('id');
-         if ($maxId == 0) {
-            $maxId = 1;
-         } else {
-            $maxId += 1;
-         }
+
          if (!empty($serviceImage)) {
             $path = Yii::getAlias('@uploadsroot');
-            $fileName = 'service_cover_' . $maxId . '.' . $serviceImage->extension;
+            $fileName = 'service_cover_' . time() . '.' . $serviceImage->extension;
             $serviceImage->saveAs($path . '/services/' . $fileName);
             $serviceModel->img = $fileName;
          }
+
          if (empty($serviceModel->parent_id)) {
             $serviceModel->parent_id = 0;
          }
@@ -357,20 +353,16 @@ class ServicesController extends Controller
       /**************форма добавление услуг*********************/
       if ($serviceModel->load(Yii::$app->request->post())) {
          $serviceImage = UploadedFile::getInstance($serviceModel, 'img');
-         $maxId = Services::find()->max('id');
-         if ($maxId == 0) {
-            $maxId = 1;
-         } else {
-            $maxId += 1;
-         }
+
          if (!empty($serviceImage)) {
             $path = Yii::getAlias('@uploadsroot');
-            $fileName = 'service_cover_' . $maxId . '.' . $serviceImage->extension;
+            $fileName = 'service_cover_' . time() . '.' . $serviceImage->extension;
             $serviceImage->saveAs($path . '/services/' . $fileName);
             $serviceModel->img = $fileName;
          } else {
             $serviceModel->img = $oldServiceImg;
          }
+
          if (empty($serviceModel->parent_id)) {
             $serviceModel->parent_id = 0;
          }
