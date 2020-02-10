@@ -52552,6 +52552,11 @@ exports.default = _vue2.default.component("accordion-item", {
   methods: {
     toggle: function toggle() {
       this.opened = !this.opened;
+
+      document.querySelector(".js-press-img").setAttribute("src", "/img/press2.gif");
+      setTimeout(function () {
+        document.querySelector(".js-press-img").setAttribute("src", "/img/press1.gif");
+      }, 2540);
     }
   },
   mounted: function mounted() {

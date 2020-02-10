@@ -232,7 +232,8 @@ echo $this->render('/page/banners/slider', ['slider' => $slider]);
                                     </div>
                                     <div class="col-6">
                                         <div class="subsection__aside">
-                                            <img class="subsection__image" src="/img/press.gif" alt>
+                                            <img class="subsection__image js-press-img" src="/img/press1.gif" alt>
+                                      
                                         </div>
                                     </div>
                                 </div>
