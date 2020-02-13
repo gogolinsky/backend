@@ -52549,10 +52549,13 @@ exports.default = _vue2.default.component("accordion-item", {
       this.opened = id;
 
       if (document.querySelector(".js-press-img")) {
-        document.querySelector(".js-press-img").setAttribute("src", "/img/press4.gif");
+        document.querySelector(".js-press-img").setAttribute("src", "/img/press-6.gif");
+        document.querySelector(".js-accordion-header").classList.add("disabled");
+
         setTimeout(function () {
-          document.querySelector(".js-press-img").setAttribute("src", "/img/press1.gif");
-        }, 3000);
+          document.querySelector(".js-press-img").setAttribute("src", "/img/press-5.gif");
+          document.querySelector(".js-accordion-header").classList.remove("disabled");
+        }, 3800);
       }
     }
   }

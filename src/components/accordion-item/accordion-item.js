@@ -17,12 +17,19 @@ export default Vue.component("accordion-item", {
       if (document.querySelector(".js-press-img")) {
         document
           .querySelector(".js-press-img")
-          .setAttribute("src", "/img/press4.gif");
+          .setAttribute("src", "/img/press-6.gif");
+        document
+          .querySelector(".js-accordion-header")
+          .classList.add("disabled");
+
         setTimeout(() => {
           document
             .querySelector(".js-press-img")
-            .setAttribute("src", "/img/press1.gif");
-        }, 3000);
+            .setAttribute("src", "/img/press-5.gif");
+          document
+            .querySelector(".js-accordion-header")
+            .classList.remove("disabled");
+        }, 3800);
       }
     }
   }

@@ -787,6 +787,9 @@ select:focus {
 /**
 * accordion
 */
+.accordion.disabled {
+  pointer-events: none; }
+
 .accordion__list {
   margin: 0;
   padding: 0;
@@ -798,7 +801,7 @@ select:focus {
   .accordion__item:first-child {
     padding-top: 0; }
   .accordion__item + .accordion__item::before {
-    content: '';
+    content: "";
     display: block;
     width: calc(100% - 70px);
     height: 1px;

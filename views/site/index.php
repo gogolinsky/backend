@@ -190,7 +190,7 @@ echo $this->render('/page/banners/slider', ['slider' => $slider]);
                                         </header>
                                         <div class="subsection__body">
                                             <div class="subsection__accordion">
-                                                <div class="accordion">
+                                                <div class="accordion js-accordion-header">
                                                     <accordion-item inline-template>
                                                         <ul class="accordion__list">
                                                             <?php $i = 0; foreach ($howWeWork as $work): $i++; ?>
@@ -198,7 +198,7 @@ echo $this->render('/page/banners/slider', ['slider' => $slider]);
                                                                     <div class="accordion-item"
                                                                         :class="{ &quot;is-open&quot;: opened }">
                                                                         <div
-                                                                            class="accordion-item__header"
+                                                                            class="accordion-item__header "
                                                                             tabindex="<?= $i - 1 ?>"
                                                                             data-index="<?= $i ?>"
                                                                             @click="toggle(<?= $i ?>)"
@@ -229,7 +229,7 @@ echo $this->render('/page/banners/slider', ['slider' => $slider]);
                                     </div>
                                     <div class="col-6">
                                         <div class="subsection__aside">
-                                            <img class="subsection__image js-press-img" src="/img/press1.gif" alt>
+                                            <img class="subsection__image js-press-img" src="/img/press-5.gif" alt>
                                         </div>
                                     </div>
                                 </div>
