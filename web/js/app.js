@@ -52538,29 +52538,23 @@ var _vue2 = _interopRequireDefault(_vue);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _vue2.default.component("accordion-item", {
-  props: {
-    initial: {
-      default: false
-    }
-  },
   data: function data() {
     return {
-      opened: false
+      opened: 1
     };
   },
 
   methods: {
-    toggle: function toggle() {
-      this.opened = !this.opened;
+    toggle: function toggle(id) {
+      this.opened = id;
 
-      document.querySelector(".js-press-img").setAttribute("src", "/img/press2.gif");
-      setTimeout(function () {
-        document.querySelector(".js-press-img").setAttribute("src", "/img/press1.gif");
-      }, 2540);
+      if (document.querySelector(".js-press-img")) {
+        document.querySelector(".js-press-img").setAttribute("src", "/img/press4.gif");
+        setTimeout(function () {
+          document.querySelector(".js-press-img").setAttribute("src", "/img/press1.gif");
+        }, 3000);
+      }
     }
-  },
-  mounted: function mounted() {
-    this.opened = this.initial;
   }
 }); /**
      * accordion-item

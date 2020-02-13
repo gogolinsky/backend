@@ -5,31 +5,25 @@
 import Vue from "vue/dist/vue.common";
 
 export default Vue.component("accordion-item", {
-  props: {
-    initial: {
-      default: false
-    }
-  },
   data() {
     return {
-      opened: false
+      opened: 1
     };
   },
   methods: {
-    toggle() {
-      this.opened = !this.opened;
+    toggle(id) {
+      this.opened = id;
 
-      document
-        .querySelector(".js-press-img")
-        .setAttribute("src", "/img/press2.gif");
-      setTimeout(() => {
+      if (document.querySelector(".js-press-img")) {
         document
           .querySelector(".js-press-img")
-          .setAttribute("src", "/img/press1.gif");
-      }, 2540);
+          .setAttribute("src", "/img/press4.gif");
+        setTimeout(() => {
+          document
+            .querySelector(".js-press-img")
+            .setAttribute("src", "/img/press1.gif");
+        }, 3000);
+      }
     }
-  },
-  mounted() {
-    this.opened = this.initial;
   }
 });

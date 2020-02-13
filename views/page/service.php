@@ -75,42 +75,42 @@ echo $this->render('/page/banners/banner', ['service' => $service]);
                                        <div class="subsection__body">
                                            <div class="subsection__accordion">
                                                <div class="accordion">
-                                                   <ul class="accordion__list">
-                                                      <?php
-                                                      $i = 0;
-                                                      foreach($answerQuestions as $question):
-                                                         $i++;
-                                                         $true = ($i == 1) ? 'true' : $true='false';
-                                                      ?>
-                                                             <li class="accordion__item">
-                                                                 <accordion-item inline-template :initial="<?=$true?>">
-                                                                     <div class="accordion-item"
-                                                                          :class="{ &quot;is-open&quot;: opened }">
-                                                                         <div class="accordion-item__header"
-                                                                              tabindex="0" data-index="<?= $i ?>"
-                                                                              @click="toggle"
-                                                                              @keypress.enter.space="toggle">
-                                                                             <div class="accordion-item__heading">
-                                                                                 <h3 class="accordion-item__title">
+                                                    <accordion-item inline-template>
+                                                        <ul class="accordion__list">
+                                                            <?php $i = 0; foreach($answerQuestions as $question):
+                                                                $i++;
+                                                                $true = ($i == 1) ? 'true' : $true='false';
+                                                            ?>
+                                                                <li class="accordion__item">
+                                                                    <div class="accordion-item"
+                                                                        :class="{ &quot;is-open&quot;: opened }">
+                                                                        <div
+                                                                            class="accordion-item__header"
+                                                                            tabindex="0" data-index="<?= $i ?>"
+                                                                            @click="toggle(<?= $i ?>)"
+                                                                            @keypress.enter.space="toggle(<?= $i ?>)"
+                                                                            >
+                                                                            <div class="accordion-item__heading">
+                                                                                <h3 class="accordion-item__title">
                                                                                     <?= $question['question'] ?></h3>
-                                                                             </div>
-                                                                             <svg class="accordion-item__arrow">
-                                                                                 <use xlink:href="/img/sprite.svg#arrow"></use>
-                                                                             </svg>
-                                                                         </div>
-                                                                         <transition name="fade">
-                                                                             <div class="accordion-item__body"
-                                                                                  v-if="opened">
-                                                                                 <div class="accordion-item__text text">
-                                                                                     <p><?= $question['answer'] ?></p>
-                                                                                 </div>
-                                                                             </div>
-                                                                         </transition>
-                                                                     </div>
-                                                                 </accordion-item>
-                                                             </li>
-                                                         <?php endforeach; ?>
-                                                   </ul>
+                                                                            </div>
+                                                                            <svg class="accordion-item__arrow">
+                                                                                <use xlink:href="/img/sprite.svg#arrow"></use>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <div
+                                                                            class="accordion-item__body"
+                                                                            v-if="opened == <?= $i ?>"
+                                                                            >
+                                                                            <div class="accordion-item__text text">
+                                                                                <p><?= $question['answer'] ?></p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            <?php endforeach; ?>
+                                                        </ul>
+                                                    </accordion-item>
                                                </div>
                                            </div>
                                            <div class="subsection__form">
@@ -432,58 +432,56 @@ echo $this->render('/page/banners/banner', ['service' => $service]);
                                        <div class="col-6">
                                            <div class="subsection__accordion">
                                                <div class="accordion">
-                                                   <ul class="accordion__list">
-                                                      <?php
-                                                      $i=0; foreach ($subServices as $service): $i+=1;
-                                                         if($i == 1){
-                                                            $class = 'true';
-                                                         }else{
-                                                            $class = 'false';
-                                                         }
-                                                         ?>
-                                                          <li class="accordion__item">
-                                                              <accordion-item inline-template :initial="<?= $class ?>">
-                                                                  <div class="accordion-item"
-                                                                       :class="{ &quot;is-open&quot;: opened }">
-                                                                      <div class="accordion-item__header"
-                                                                           tabindex="0" data-index="<?= $i ?>"
-                                                                           @click="toggle"
-                                                                           @keypress.enter.space="toggle">
-                                                                          <div class="accordion-item__heading">
-                                                                              <h3 class="accordion-item__title">
-                                                                                 <?= $service['name'] ?></h3>
-                                                                          </div>
-                                                                          <svg class="accordion-item__arrow">
-                                                                              <use xlink:href="/img/sprite.svg#arrow"></use>
-                                                                          </svg>
-                                                                      </div>
-                                                                      <transition name="fade">
-                                                                          <div class="accordion-item__body" v-if="opened">
-                                                                              <div class="accordion-item__text text">
-                                                                                  <p><?= $service['description'] ?></p>
-                                                                                  <a href="/page/service/<?= $service['alias'] ?>">Подробнее</a>
-                                                                              </div>
-                                                                             <?php if(!empty($subServicesEquipments[$service['id']])): ?>
-                                                                                 <div class="accordion-item__equipment">
-                                                                                     <article class="equipment">
-                                                                                         <figure class="equipment__cover">
-                                                                                             <img src="<?= Yii::getAlias('@uploads').'/'.$subServicesEquipments[$service['id']]['img'] ?>" alt="" class="equipment__image">
-                                                                                         </figure>
-                                                                                         <header class="equipment__header">
-                                                                                             <p class="equipment__caption">Используемое оборудование: </p>
-                                                                                             <h3 class="equipment__title"><?= $subServicesEquipments[$service['id']]['name'] ?></h3>
-                                                                                             <p class="equipment__descr"><?= $subServicesEquipments[$service['id']]['description'] ?></p>
-                                                                                         </header>
-                                                                                     </article>
-                                                                                 </div>
-                                                                             <?php endif; ?>
-                                                                          </div>
-                                                                      </transition>
-                                                                  </div>
-                                                              </accordion-item>
-                                                          </li>
-                                                      <?php endforeach; ?>
-                                                   </ul>
+                                                    <accordion-item inline-template >
+                                                        <ul class="accordion__list">
+                                                            <?php
+                                                            $i=0; foreach ($subServices as $service): $i+=1;
+                                                                if($i == 1){
+                                                                    $class = 'true';
+                                                                }else{
+                                                                    $class = 'false';
+                                                                }
+                                                                ?>
+                                                                <li class="accordion__item">
+                                                                    <div class="accordion-item"
+                                                                        :class="{ &quot;is-open&quot;: opened }">
+                                                                        <div class="accordion-item__header"
+                                                                            tabindex="0" data-index="<?= $i ?>"
+                                                                            @click="toggle(<?= $i ?>)"
+                                                                            @keypress.enter.space="toggle(<?= $i ?>)">
+                                                                            <div class="accordion-item__heading">
+                                                                                <h3 class="accordion-item__title">
+                                                                                    <?= $service['name'] ?></h3>
+                                                                            </div>
+                                                                            <svg class="accordion-item__arrow">
+                                                                                <use xlink:href="/img/sprite.svg#arrow"></use>
+                                                                            </svg>
+                                                                        </div>
+                                                                            <div class="accordion-item__body" v-if="opened == <?= $i ?>">
+                                                                                <div class="accordion-item__text text">
+                                                                                    <p><?= $service['description'] ?></p>
+                                                                                    <a href="/page/service/<?= $service['alias'] ?>">Подробнее</a>
+                                                                                </div>
+                                                                                <?php if(!empty($subServicesEquipments[$service['id']])): ?>
+                                                                                    <div class="accordion-item__equipment">
+                                                                                        <article class="equipment">
+                                                                                            <figure class="equipment__cover">
+                                                                                                <img src="<?= Yii::getAlias('@uploads').'/'.$subServicesEquipments[$service['id']]['img'] ?>" alt="" class="equipment__image">
+                                                                                            </figure>
+                                                                                            <header class="equipment__header">
+                                                                                                <p class="equipment__caption">Используемое оборудование: </p>
+                                                                                                <h3 class="equipment__title"><?= $subServicesEquipments[$service['id']]['name'] ?></h3>
+                                                                                                <p class="equipment__descr"><?= $subServicesEquipments[$service['id']]['description'] ?></p>
+                                                                                            </header>
+                                                                                        </article>
+                                                                                    </div>
+                                                                                <?php endif; ?>
+                                                                            </div>
+                                                                    </div>
+                                                                </li>
+                                                            <?php endforeach; ?>
+                                                        </ul>
+                                                   </accordion-item>
                                                </div>
                                            </div>
                                        </div>
