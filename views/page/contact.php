@@ -77,7 +77,7 @@ $this->title = 'Контакты';
                                                         </li>
                                                         <li class="contacts__item">
                                                             <div class="contact">
-                                                                <div class="contact__caption">Email
+                                                                <div class="contact__caption">E-mail
                                                                 </div>
                                                                 <a class="contact__value"
                                                                    href="mailto:andrey@prometey67.ru"><?= Yii::$app->settings->get('Контакты', 'Email') ?></a>

@@ -3409,7 +3409,7 @@ select:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 210px;
+  width: 220px;
   text-align: center; }
   .person.is-light .person__name {
     color: #ffffff; }
@@ -3420,8 +3420,8 @@ select:focus {
     width: auto;
     text-align: left; }
   .person__cover {
-    width: 100%;
     height: 210px;
+    width: 210px;
     margin: 0;
     flex-shrink: 0;
     border-radius: 50%;
