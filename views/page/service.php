@@ -424,7 +424,7 @@ echo $this->render('/page/banners/banner', ['service' => $service]);
                        <div class="section__subsection">
                            <section class="subsection">
                                <header class="subsection__header">
-                                   <h3 class="subsection__title"><span><i>Виды</i> гибки метала</span>
+                                   <h3 class="subsection__title"><span><i>Виды</i> услуги</span>
                                    </h3>
                                </header>
                                <div class="subsection__body">
