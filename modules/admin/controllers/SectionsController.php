@@ -112,7 +112,7 @@ class SectionsController extends Controller
             $sectionIco = UploadedFile::getInstance($model, 'ico');
             if(!empty($sectionImg)){
                 $path = Yii::getAlias('@uploadsroot');
-                $imgName = $sectionImg->baseName.'.'.$sectionImg->extension;
+                $imgName = time().$sectionImg->baseName.'.'.$sectionImg->extension;
                 $sectionImg->saveAs($path . DIRECTORY_SEPARATOR . $imgName);
                 $model->img = $imgName;
             }else{
@@ -120,7 +120,7 @@ class SectionsController extends Controller
             }
             if(!empty($sectionIco)){
                 $path = Yii::getAlias('@uploadsroot');
-                $icoName = $sectionIco->baseName.'.'.$sectionIco->extension;
+                $icoName = time().$sectionIco->baseName.'.'.$sectionIco->extension;
                 $sectionIco->saveAs($path . DIRECTORY_SEPARATOR . $icoName);
                 $model->ico = $icoName;
             }else{
