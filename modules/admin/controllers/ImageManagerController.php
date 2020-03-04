@@ -111,7 +111,7 @@ class ImageManagerController extends Controller
                 $imgName = $img->baseName.'.'.$img->extension;
                   $model->img = $imgName;
                   $model->value = $imgName;
-                $img->saveAs($path.$imgName);
+                $img->saveAs($path . DIRECTORY_SEPARATOR . $imgName);
 
             }
 

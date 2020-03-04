@@ -74,13 +74,13 @@ class SectionsController extends Controller
             if(!empty($sectionImg)){
                 $path = Yii::getAlias('@uploadsroot');
                 $imgName = $sectionImg->baseName.'.'.$sectionImg->extension;
-                $sectionImg->saveAs($path.$imgName);
+                $sectionImg->saveAs($path . DIRECTORY_SEPARATOR . $imgName);
                 $model->img = $imgName;
             }
             if(!empty($sectionIco)){
                 $path = Yii::getAlias('@uploadsroot');
                 $icoName = $sectionIco->baseName.'.'.$sectionIco->extension;
-                $sectionIco->saveAs($path.$icoName);
+                $sectionIco->saveAs($path . DIRECTORY_SEPARATOR . $icoName);
                 $model->ico = $icoName;
             }
             if($model->save()){
@@ -113,7 +113,7 @@ class SectionsController extends Controller
             if(!empty($sectionImg)){
                 $path = Yii::getAlias('@uploadsroot');
                 $imgName = $sectionImg->baseName.'.'.$sectionImg->extension;
-                $sectionImg->saveAs($path.$imgName);
+                $sectionImg->saveAs($path . DIRECTORY_SEPARATOR . $imgName);
                 $model->img = $imgName;
             }else{
                 $model->img = $oldImg;
@@ -121,7 +121,7 @@ class SectionsController extends Controller
             if(!empty($sectionIco)){
                 $path = Yii::getAlias('@uploadsroot');
                 $icoName = $sectionIco->baseName.'.'.$sectionIco->extension;
-                $sectionIco->saveAs($path.$icoName);
+                $sectionIco->saveAs($path . DIRECTORY_SEPARATOR . $icoName);
                 $model->ico = $icoName;
             }else{
                 $model->ico = $oldIco;
