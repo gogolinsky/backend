@@ -159,18 +159,18 @@ $this->title = 'О компании';
                                         <div class="subsection__body">
                                             <div class="subsection__accordion">
                                                 <div class="accordion">
-                                                    <ul class="accordion__list">
-                                                        <?php $i = 0;
-                                                        foreach ($howWeWork as $work): $i++;
-                                                            $true = ($i > 0) ? 'true' : 'false'; ?>
-                                                            <li class="accordion__item">
-                                                                <accordion-item inline-template :initial="<?= $true ?>">
+                                                    <accordion-item inline-template>
+                                                        <ul class="accordion__list">
+                                                            <?php $i = 0;
+                                                            foreach ($howWeWork as $work): $i++;
+                                                                $true = ($i > 0) ? 'true' : 'false'; ?>
+                                                                <li class="accordion__item">
                                                                     <div class="accordion-item"
-                                                                         :class="{ &quot;is-open&quot;: opened }">
+                                                                        :class="{ &quot;is-open&quot;: opened }">
                                                                         <div class="accordion-item__header"
-                                                                             tabindex="<?= $i - 1 ?>" data-index="<?= $i ?>"
-                                                                             @click="toggle"
-                                                                             @keypress.enter.space="toggle">
+                                                                            tabindex="<?= $i - 1 ?>" data-index="<?= $i ?>"
+                                                                            @click="toggle(<?= $i ?>)"
+                                                                            @keypress.enter.space="toggle(<?= $i ?>)">
                                                                             <div class="accordion-item__heading">
                                                                                 <h3 class="accordion-item__title">
                                                                                     <?= $work['title'] ?></h3></div>
@@ -178,18 +178,16 @@ $this->title = 'О компании';
                                                                                 <use xlink:href="/img/sprite.svg#arrow"></use>
                                                                             </svg>
                                                                         </div>
-                                                                        <transition name="fade">
-                                                                            <div class="accordion-item__body"
-                                                                                 v-if="opened">
-                                                                                <div class="accordion-item__text text">
-                                                                                    <p><?= $work['description'] ?></p></div>
-                                                                            </div>
-                                                                        </transition>
+                                                                        <div class="accordion-item__body"
+                                                                            v-if="opened == <?= $i ?>">
+                                                                            <div class="accordion-item__text text">
+                                                                                <p><?= $work['description'] ?></p></div>
+                                                                        </div>
                                                                     </div>
-                                                                </accordion-item>
-                                                            </li>
-                                                        <?php endforeach; ?>
-                                                    </ul>
+                                                                </li>
+                                                            <?php endforeach; ?>
+                                                        </ul>
+                                                    </accordion-item>
                                                 </div>
                                             </div>
                                         </div>

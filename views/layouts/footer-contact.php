@@ -35,7 +35,7 @@
                                                                <?= Yii::$app->settings->get('Сотрудник', 'руков_цеха_штамп') ?>
                                                             </h4>
                                                             <p class="person__position">
-                                                               <?= Yii::$app->settings->get('Сотрудник', 'главТехник') ?>
+                                                               <?= Yii::$app->settings->get('Должность', 'руков_цеха_штамп') ?>
                                                             </p>
                                                         </header>
                                                     </article>
@@ -67,7 +67,7 @@
                                                     <li class="contacts__item">
                                                         <div class="contact">
                                                             <div class="contact__caption">
-                                                                Email
+                                                                E-mail
                                                             </div>
                                                             <a class="contact__value"
                                                                href="mailto:<?= Yii::$app->settings->get('Контакты', 'Email') ?>">
