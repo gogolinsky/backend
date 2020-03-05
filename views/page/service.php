@@ -323,18 +323,21 @@ echo $this->render('/page/banners/banner', ['service' => $service]);
                                            <div class="example-showcase__left" ref="leftSlider">
                                                <ul class="example-showcase__slider" ref="leftSliderList">
                                                   <?php foreach ($workResults as $result): ?>
-                                                      <li class="example-showcase__slide"
-                                                          ref="leftSliderItem"><a
+                                                      <li class="example-showcase__slide" ref="leftSliderItem">
+	                                                        <a
                                                                   class="example-showcase__cover lightbox"
                                                                   data-group="example"
                                                                   href="<?= Yii::getAlias('@uploads') ?>/results/<?= $result['img'] ?>">
                                                               <img class="example-showcase__image"
                                                                    src="<?= Yii::getAlias('@uploads') ?>/results/<?= $result['img'] ?>"
                                                                    alt>
-                                                              <img class="example-showcase__schema"
-                                                                   data-swiper-parallax-x="-60"
-                                                                   src="<?= Yii::getAlias('@uploads') ?>/results/<?= $result['img_draw'] ?>"
-                                                                   alt></a>
+		                                                      <?php if ($result['img_draw']): ?>
+			                                                      <img class="example-showcase__schema"
+			                                                           data-swiper-parallax-x="-60"
+			                                                           src="<?= Yii::getAlias('@uploads') ?>/results/<?= $result['img_draw'] ?>"
+			                                                           alt>
+		                                                      <?php endif ?>
+	                                                      </a>
                                                       </li>
                                                   <?php endforeach; ?>
                                                </ul>
