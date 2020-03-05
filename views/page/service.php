@@ -332,10 +332,10 @@ echo $this->render('/page/banners/banner', ['service' => $service]);
                                                                    src="<?= Yii::getAlias('@uploads') ?>/results/<?= $result['img'] ?>"
                                                                    alt>
 		                                                      <?php if ($result['img_draw']): ?>
-			                                                      <img class="example-showcase__schema"
+			                                                      <!--<img class="example-showcase__schema"
 			                                                           data-swiper-parallax-x="-60"
 			                                                           src="<?= Yii::getAlias('@uploads') ?>/results/<?= $result['img_draw'] ?>"
-			                                                           alt>
+			                                                           alt>-->
 		                                                      <?php endif ?>
 	                                                      </a>
                                                       </li>
