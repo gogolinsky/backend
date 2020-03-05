@@ -91,7 +91,7 @@ $this->title = 'О компании';
                                                                         <?=$item['description']?>
                                                                     </div>
                                                                 </div>
-                                                                <footer class="history-item__footer">
+                                                                <!--<footer class="history-item__footer">
                                                                     <div class="history-item__person"
                                                                          data-swiper-parallax-x="-60">
                                                                         <div class="person is-light is-simple">
@@ -103,7 +103,7 @@ $this->title = 'О компании';
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </footer>
+                                                                </footer>-->
                                                             </div>
                                                         </div>
                                                     </div>
