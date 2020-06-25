@@ -3,7 +3,7 @@ lock [">= 3.0.0", "< 4.0.0"]
 
 # Application Settings
 # set :application, ''
-set :deploy_to, -> { "/home/dancecolor/domains/tehars.ru" }
+set :deploy_to, -> { "/home/dancecolor/domains/xn--80aaahh3bclghbfm3b0b4c2g.xn--p1ai" }
 set :linked_dirs, %w{web/uploads runtime}
 set :linked_files, %w{composer.phar config/db.php web/sitemap.xml web/robots.txt}
 set :keep_releases, 1
