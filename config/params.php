@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'adminEmail' => 'test-hfj5gyh5w@srv1.mail-tester.com',
-    'senderEmail' => 'techarsenal-smolensk@yandex.ru',
+    'adminEmail' => 'andrey@prometey67.ru',
+    'senderEmail' => 'techarsenal-smolensk@yandex.ru', // Не менять
     'senderName' => 'холоднаяштамповка.рф',
 ];
