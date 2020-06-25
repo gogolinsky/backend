@@ -36,7 +36,7 @@ namespace :deploy do
 
             execute "cd #{deploy_to}/public_html && rm index.php && mv index-prod.php index.php"
             execute "cd #{deploy_to}/public_html && rm .htaccess && mv .htaccess-prod .htaccess"
-            execute "cd #{deploy_to}/releases/#{File.basename release_path} && rm .htaccess"
+            #execute "cd #{deploy_to}/releases/#{File.basename release_path} && rm .htaccess"
             info "Fix .htaccesses"
 
             execute "cd #{deploy_to}/releases/#{File.basename release_path} && php72 yii migrate --interactive=0"
