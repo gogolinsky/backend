@@ -38,7 +38,7 @@ $config = [
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
-            'useFileTransport' => false,
+	        'useFileTransport' => YII_ENV_DEV,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.yandex.ru',
@@ -134,9 +134,7 @@ $config = [
 if (YII_ENV_DEV) {
 
     $config['bootstrap'][] = 'debug';
-    $config['modules']['debug'] = [
-        'class' => 'yii\debug\Module',
-    ];
+    $config['modules']['debug'] = 'yii\debug\Module';
 }
 
 return $config;
