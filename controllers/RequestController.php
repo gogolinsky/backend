@@ -258,7 +258,7 @@ class RequestController extends Controller
             'customer' => $customer,
             'text' => $text,
         ])
-            ->setFrom([Yii::$app->params['adminEmail'] => $customer . ' - ' . $phone])
+            ->setFrom([Yii::$app->params['senderEmail'] => $customer . ' - ' . $phone])
             ->setTo(Yii::$app->params['adminEmail'])
             ->setSubject($subject)
             ->setTextBody($customer)
@@ -274,7 +274,7 @@ class RequestController extends Controller
             'customer' => $customer,
             'text' => $text,
         ])
-            ->setFrom([Yii::$app->params['adminEmail'] => $customer . ' - ' . $phone])
+            ->setFrom([Yii::$app->params['senderEmail'] => $customer . ' - ' . $phone])
             ->setTo(Yii::$app->params['adminEmail'])
             ->setSubject($subject)
             ->setTextBody($customer)
