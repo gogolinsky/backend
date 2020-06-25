@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'adminEmail' => 'techarsenal-smolensk@yandex.ru',
+    'adminEmail' => 'gogolinsky.pavel@gmail.com',
     'senderEmail' => 'techarsenal-smolensk@yandex.ru',
     'senderName' => 'холоднаяштамповка.рф',
 ];
